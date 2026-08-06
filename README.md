@@ -1,36 +1,226 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Argam Osman | AI Systems Engineer
 
-## Getting Started
+<p align="center">
+  <img src="public/images/profile.png" width="150" alt="Argam Osman">
+</p>
 
-First, run the development server:
+<h3 align="center">
+AI Systems Engineer building intelligent systems, backend platforms, automation workflows, and robotics solutions.
+</h3>
+
+<p align="center">
+  <a href="https://alargam.vercel.app/">Live Portfolio</a>
+</p>
+
+---
+
+## About
+
+I am an **AI Systems Engineer** focused on designing and building production-ready intelligent systems that combine:
+
+- Artificial Intelligence
+- Backend Engineering
+- Automation Systems
+- Computer Vision
+- Robotics
+
+My work focuses on transforming AI ideas into reliable software systems through strong engineering practices, scalable architectures, and real-world deployment.
+
+---
+
+## Portfolio
+
+🌐 Website:
+
+https://alargam.vercel.app/
+
+The portfolio showcases my projects, technical experience, and engineering journey.
+
+---
+
+# Featured Projects
+
+## Delivero — Autonomous Mobile Robot
+
+An autonomous mobile robot platform built using ROS 2 and AI-based perception systems.
+
+### Technologies
+
+- ROS 2
+- Gazebo Simulation
+- YOLO Object Detection
+- TensorRT Optimization
+- LiDAR
+- IMU
+- Wheel Encoders
+- Sensor Fusion
+- Autonomous Navigation
+- Raspberry Pi
+- ESP32
+- micro-ROS
+
+### Highlights
+
+- Designed autonomous navigation pipeline
+- Integrated AI perception with robotics systems
+- Built simulation environment using Gazebo
+- Implemented sensor fusion for robot localization
+
+---
+
+## AI Automation Systems
+
+AI-powered automation workflows designed to reduce manual operations and improve business processes.
+
+### Technologies
+
+- n8n
+- OpenAI APIs
+- Cloudflare AI
+- Google Sheets
+- WordPress Automation
+
+### Highlights
+
+- Automated content generation pipelines
+- Connected multiple services into intelligent workflows
+- Built scalable automation solutions
+
+---
+
+## AI-Powered SEO & WordPress Automation
+
+An intelligent workflow system that automates SEO tasks and website content operations.
+
+### Technologies
+
+- n8n
+- OpenAI
+- WordPress API
+- Google Sheets
+- Cloudflare AI
+
+---
+
+## Medical Image Super Resolution
+
+Deep learning project focused on improving medical image quality using generative models.
+
+### Technologies
+
+- PyTorch
+- GANs
+- Deep Learning
+- Custom Dataset
+
+### Results
+
+- PSNR: 36.1
+- SSIM: 0.81
+
+---
+
+# Tech Stack
+
+## Programming Languages
+
+<p>
+Python • C++ • TypeScript • JavaScript
+</p>
+
+## AI / Machine Learning
+
+<p>
+PyTorch • TensorFlow • OpenCV • YOLO • Transformers
+</p>
+
+## Backend Engineering
+
+<p>
+FastAPI • REST APIs • SQL • PostgreSQL • Docker
+</p>
+
+## Robotics
+
+<p>
+ROS 2 • Gazebo • SLAM • Sensor Fusion • Autonomous Systems
+</p>
+
+## Automation
+
+<p>
+n8n • OpenAI API • Workflow Automation
+</p>
+
+## Frontend
+
+<p>
+Next.js • React • TypeScript • Tailwind CSS
+</p>
+
+---
+
+# Development
+
+## Install dependencies
+
+```bash
+npm install
+```
+
+## Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This portfolio is deployed using:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Vercel
+- GitHub CI/CD workflow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Every push to the main branch automatically triggers a new deployment.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Engineering Philosophy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I believe successful AI systems require more than machine learning models.
+
+They require:
+
+- Clean software architecture
+- Reliable backend systems
+- Scalable deployment
+- Automation
+- Real-world engineering
+
+My goal is to build AI systems that create measurable impact.
+
+---
+
+# Contact
+
+Portfolio:
+
+https://alargam.vercel.app/
+
+GitHub:
+
+https://github.com/alargam
+
+---
+
+## License
+
+This project is for personal portfolio purposes.
