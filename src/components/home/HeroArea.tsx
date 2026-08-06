@@ -12,7 +12,6 @@ export default function HeroArea() {
 
               <div className="hero-content hero-intro wow fadeInUp text-center delay-0-2s">
                 <h1 className="hero-title">AI Systems Engineer</h1>
-                <p className="hero-subtitle">Argam Osman</p>
               </div>
 
             </div>

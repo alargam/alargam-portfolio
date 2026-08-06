@@ -20,7 +20,7 @@ export default function HeaderOne() {
                 <div className="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                   <div className="logo-area">
                     <div className="logo">
-                      <Link href="/" className="text-logo" aria-label="Argam Osman home">Argam Osman</Link>
+                      <Link href="/" className="text-logo" aria-label="ALARGAM home">ALARGAM</Link>
                     </div>
                   </div>
                 </div>
