@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <title>Autonomous Mobile Robot | Alargam Osman</title>
+  </head>
+
+  <body>
+    <header class="header case-study-header">
+      <h2 class="visually-hidden">Header</h2>
+
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+
+          <a href="../index.html" class="header__home">
+            alargam
+            <span class="visually-hidden">(to home page)</span>
+          </a>
+
+          <a
+            href="https://github.com/alargam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="GitHub profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialGitHubHeader"
+              role="img"
+            >
+              <title id="socialGitHubHeader">GitHub</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/alargam-osman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="LinkedIn profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialLinkedInHeader"
+              role="img"
+            >
+              <title id="socialLinkedInHeader">LinkedIn</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="case-study">
+      <div class="wrapper case-study__wrapper case-study__wrapper--wide">
+        <a href="../index.html#projects" class="case-study__back underline">
+          Back to Projects
+        </a>
+
+        <!-- 1. Hero / Project Summary -->
+        <header class="case-study__hero">
+          <h1 class="case-study__title">Autonomous Mobile Robot</h1>
+          <p class="case-study__subtitle">
+            ROS 2 Jazzy | Real-Time Perception | Embedded Control | Edge AI
+          </p>
+          <p class="case-study__summary">
+            An end-to-end Autonomous Mobile Robot platform developed as a
+            Mechatronics Engineering Graduation Project. The system integrates
+            real-time perception, SLAM, localization, embedded motor control,
+            sensor fusion, and autonomous navigation into a complete robotic
+            platform built around ROS 2 Jazzy.
+          </p>
+
+          <div class="case-study__quick-links">
+            <a
+              href="https://delivero.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              Official Project Website
+            </a>
+            <a
+              href="https://arxiv.org/abs/2512.22408"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              Research Paper
+            </a>
+            <a
+              href="https://github.com/alargam/AMR_Robot"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              GitHub Repository
+            </a>
+          </div>
+
+          <div class="case-study__picture case-study__picture--natural">
+            <img
+              class="amr-image"
+              src="../assets/images/amr/amr-hero.png"
+              alt="Autonomous Mobile Robot platform overview"
+              width="1200"
+              height="675"
+            />
+          </div>
+        </header>
+
+        <!-- 2. Project Overview -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Project Overview</h2>
+          <p>
+            The AMR project focuses on building a complete autonomous delivery
+            robot capable of mapping indoor environments, localizing itself,
+            planning paths, avoiding obstacles, and executing movement commands
+            through an embedded control layer.
+          </p>
+          <p>
+            The platform follows a modular ROS 2 architecture where perception,
+            localization, navigation, hardware drivers, robot description, and
+            low-level control are separated into maintainable components.
+          </p>
+        </section>
+
+        <!-- 3. My Contribution -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">My Contribution</h2>
+          <p>
+            I worked on the software and robotics integration side of the
+            system, including ROS 2 architecture, perception pipeline
+            integration, robot bringup, embedded communication, sensor
+            integration, navigation stack setup, and system-level testing.
+          </p>
+        </section>
+
+        <!-- 4. System Architecture -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">System Architecture</h2>
+          <p>
+            The AMR stack is organized into four cooperating layers that span
+            from sensor input to wheel actuation.
+          </p>
+
+          <div class="case-study__card-grid">
+            <div class="case-study__card">
+              <h3 class="case-study__card-title">Perception Layer</h3>
+              <p>
+                Processes camera data through an optimized YOLO inference node
+                and publishes detection outputs into the ROS 2 graph.
+              </p>
+            </div>
+            <div class="case-study__card">
+              <h3 class="case-study__card-title">
+                Localization &amp; Mapping Layer
+              </h3>
+              <p>
+                Fuses encoder and IMU data with SLAM Toolbox to build maps and
+                maintain consistent robot pose estimates.
+              </p>
+            </div>
+            <div class="case-study__card">
+              <h3 class="case-study__card-title">Navigation Layer</h3>
+              <p>
+                Uses Nav2 for global planning, local control, obstacle
+                avoidance, and velocity command generation.
+              </p>
+            </div>
+            <div class="case-study__card">
+              <h3 class="case-study__card-title">Embedded Control Layer</h3>
+              <p>
+                ESP32-based low-level control using micro-ROS receives
+                <code>/cmd_vel</code> and drives motors through the BTS7960
+                driver.
+              </p>
+            </div>
+          </div>
+
+          <div class="case-study__table-wrap">
+            <table class="case-study__table">
+              <thead>
+                <tr>
+                  <th scope="col">Sensor / Input</th>
+                  <th scope="col">Processing Node / Algorithm</th>
+                  <th scope="col">Output / Interface</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Camera</td>
+                  <td>Perception Node / TensorRT</td>
+                  <td><code>/detections</code></td>
+                </tr>
+                <tr>
+                  <td>LiDAR</td>
+                  <td>SLAM Toolbox</td>
+                  <td><code>/map</code></td>
+                </tr>
+                <tr>
+                  <td>Encoders + IMU</td>
+                  <td>EKF robot_localization</td>
+                  <td><code>/odom</code></td>
+                </tr>
+                <tr>
+                  <td>Nav2</td>
+                  <td>Planner / Controller</td>
+                  <td><code>/cmd_vel</code></td>
+                </tr>
+                <tr>
+                  <td>ESP32 Embedded Controller</td>
+                  <td>Low-Level Motor Control</td>
+                  <td>Motor Driver → Wheels</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <figure class="case-study__figure">
+            <div class="case-study__picture case-study__picture--natural">
+              <img
+                class="amr-image"
+                src="../assets/images/amr/amr-architecture.png"
+                alt="AMR system architecture diagram showing ROS 2 layers and data flow"
+                width="1200"
+                height="675"
+              />
+            </div>
+            <figcaption class="case-study__figure-caption">
+              End-to-end AMR system architecture across perception, localization,
+              navigation, and embedded control.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- 5. Hardware Stack -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Hardware Stack</h2>
+
+          <div class="case-study__spec-grid">
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Main Compute</span>
+              <span class="case-study__spec-value">Raspberry Pi 5</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Microcontroller</span>
+              <span class="case-study__spec-value">ESP32</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">LiDAR</span>
+              <span class="case-study__spec-value">LD06</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Camera</span>
+              <span class="case-study__spec-value">Orbbec Astra Pro</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Motor Driver</span>
+              <span class="case-study__spec-value">BTS7960</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Battery System</span>
+              <span class="case-study__spec-value">24V</span>
+            </div>
+            <div class="case-study__spec case-study__spec--wide">
+              <span class="case-study__spec-label">Sensors</span>
+              <span class="case-study__spec-value">
+                Wheel Encoders, IMU, LiDAR, RGB-D Camera
+              </span>
+            </div>
+          </div>
+
+          <div class="case-study__card case-study__card--hardware">
+            <h3 class="case-study__card-title">Hardware Integration</h3>
+            <p>
+              The platform combines a Raspberry Pi 5 for high-level ROS 2
+              processing with an ESP32 microcontroller for motor control,
+              alongside LD06 LiDAR, Orbbec Astra Pro camera, wheel encoders,
+              IMU, and a BTS7960 motor driver on a 24V battery system.
+            </p>
+          </div>
+
+          <figure class="case-study__figure">
+            <div class="case-study__picture case-study__picture--natural">
+              <img
+                class="amr-image"
+                src="../assets/images/amr/amr-real-robot.jpg"
+                alt="Fully assembled Autonomous Mobile Robot in an indoor environment"
+                width="800"
+                height="450"
+              />
+            </div>
+            <figcaption class="case-study__figure-caption">
+              Deployed AMR platform ready for mapping and navigation testing.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- 6. ROS 2 Software Stack -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">ROS 2 Software Stack</h2>
+          <ul class="case-study__list">
+            <li>ROS 2 Jazzy</li>
+            <li>Nav2</li>
+            <li>SLAM Toolbox</li>
+            <li>robot_localization</li>
+            <li>micro-ROS</li>
+            <li>Custom <code>robot_bringup</code> package</li>
+            <li>URDF robot description</li>
+            <li>Camera and LiDAR drivers</li>
+            <li>Custom perception inference node</li>
+          </ul>
+        </section>
+
+        <!-- 7. Real-Time Perception & Sensor Fusion -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">
+            Real-Time Perception &amp; Sensor Fusion
+          </h2>
+          <p>
+            The perception system combines LiDAR-based spatial awareness with
+            camera-based object understanding. The LiDAR is used for mapping and
+            obstacle geometry, while the camera and YOLO model provide visual
+            recognition and object-level understanding.
+          </p>
+          <p>
+            This design solves a key limitation of 2D LiDAR: it can build a
+            reliable map and detect planar obstacles, but it cannot fully
+            understand depth, object type, or complex visual situations. By
+            adding camera perception and YOLO inference, the robot gains a
+            stronger understanding of its environment.
+          </p>
+          <p>
+            The fused perception output helps the robot decide whether to
+            continue moving, slow down, or stop based on surrounding obstacles
+            and safety conditions.
+          </p>
+
+          <div class="case-study__card-grid case-study__card-grid--two">
+            <div class="case-study__card">
+              <h3 class="case-study__card-title">Pipeline Details</h3>
+              <ul class="case-study__card-list">
+                <li><strong>Model:</strong> YOLOv11n</li>
+                <li><strong>Framework:</strong> PyTorch → ONNX → TensorRT</li>
+                <li><strong>Deployment Target:</strong> Raspberry Pi 5</li>
+                <li><strong>Output Topic:</strong> <code>/detections</code></li>
+              </ul>
+            </div>
+            <div class="case-study__card">
+              <h3 class="case-study__card-title">Edge Performance</h3>
+              <ul class="case-study__card-list">
+                <li><strong>FP32 inference:</strong> 4–6 FPS</li>
+                <li><strong>INT8 inference:</strong> 12–18 FPS</li>
+                <li><strong>FP32 latency:</strong> 160–250 ms</li>
+                <li><strong>INT8 latency:</strong> 55–85 ms</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Multi-Sensor Decision Logic -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Multi-Sensor Decision Logic</h2>
+          <p>
+            The Raspberry Pi 5 acts as the high-level perception and
+            decision-making unit. It combines LiDAR readings, camera perception,
+            YOLO detections, and navigation data to evaluate the robot&rsquo;s
+            surroundings.
+          </p>
+          <p>
+            Instead of relying only on 2D LiDAR, the robot uses camera perception
+            to improve obstacle understanding and visual context. This allows the
+            system to make more informed movement decisions, especially when the
+            LiDAR map alone is not enough to understand the type or structure of
+            an obstacle.
+          </p>
+          <p>
+            Based on fused sensor data, the robot can decide whether to continue
+            moving, slow down, or stop.
+          </p>
+        </section>
+
+        <!-- 9. Emergency Safety Layer -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Emergency Safety Layer</h2>
+          <p>
+            For safety, the robot includes a low-level emergency layer handled
+            by the ESP32-S3. ToF sensors are used as a fallback safety mechanism
+            for close-range obstacle detection.
+          </p>
+          <p>
+            If the Raspberry Pi, ROS 2 system, or high-level perception pipeline
+            fails, the ESP32-S3 can still trigger an emergency stop and stop the
+            robot at the nearest safe point. This creates a safer separation
+            between high-level autonomy and low-level embedded protection.
+          </p>
+        </section>
+
+        <!-- 10. Localization & Sensor Fusion -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">
+            Localization &amp; Sensor Fusion
+          </h2>
+          <p>
+            Localization was implemented using robot_localization with an
+            Extended Kalman Filter. The system fuses wheel encoder data and IMU
+            measurements to estimate robot odometry and improve navigation
+            stability.
+          </p>
+          <p>
+            The TF tree follows REP-105 conventions:
+            <code>map → odom → base_link</code>
+          </p>
+        </section>
+
+        <!-- 11. SLAM & Autonomous Navigation -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">
+            SLAM &amp; Autonomous Navigation
+          </h2>
+          <p>
+            The navigation system uses SLAM Toolbox for mapping and Nav2 for
+            autonomous path planning and control.
+          </p>
+
+          <p><strong>Autonomous capabilities:</strong></p>
+          <ul class="case-study__list">
+            <li>Real-time mapping</li>
+            <li>Localization</li>
+            <li>Global path planning</li>
+            <li>Local obstacle avoidance</li>
+            <li>Waypoint navigation</li>
+            <li>Velocity command generation</li>
+          </ul>
+
+          <div class="case-study__gallery">
+            <figure class="case-study__figure">
+              <div class="case-study__picture case-study__picture--natural">
+                <img
+                  class="amr-image"
+                  src="../assets/images/amr/amr-rviz-mapping.png"
+                  alt="RViz visualization of SLAM mapping on the AMR platform"
+                  width="800"
+                  height="450"
+                />
+              </div>
+              <figcaption class="case-study__figure-caption">
+                SLAM Toolbox mapping in RViz.
+              </figcaption>
+            </figure>
+            <figure class="case-study__figure">
+              <div class="case-study__picture case-study__picture--natural">
+                <img
+                  class="amr-image"
+                  src="../assets/images/amr/amr-nav2.png"
+                  alt="Nav2 autonomous navigation stack visualization"
+                  width="800"
+                  height="450"
+                />
+              </div>
+              <figcaption class="case-study__figure-caption">
+                Nav2 path planning and autonomous navigation.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="case-study__actions">
+            <a
+              href="https://youtu.be/Y2gumzrdt7Y?si=m39UE9KOSQfXusku"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              Watch Mapping Demo
+            </a>
+            <a
+              href="https://youtu.be/pdu4tVg_QxQ?si=h2zefPR79atgquf7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              Watch Autonomous Navigation Demo
+            </a>
+          </div>
+        </section>
+
+        <!-- 12. Embedded Control Layer -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Embedded Control Layer</h2>
+          <p>
+            The embedded control layer is built around an ESP32-S3 running
+            micro-ROS. It communicates with the Raspberry Pi 5 ROS 2 system,
+            receives <code>/cmd_vel</code> velocity commands, exchanges
+            sensor/control data, and translates high-level motion commands into
+            motor actuation through the BTS7960 driver.
+          </p>
+          <p>
+            The ESP32-S3 also supports a safety fallback layer using ToF sensors,
+            allowing the robot to stop even if the high-level Raspberry Pi
+            system fails.
+          </p>
+          <p>
+            This separation allows the Raspberry Pi 5 to handle high-level
+            perception and navigation while the ESP32-S3 manages time-sensitive
+            low-level motor control and embedded safety responsibilities.
+          </p>
+        </section>
+
+        <!-- 13. Repository Structure -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Repository Structure</h2>
+          <pre class="case-study__code"><code>AMR_Robot/
+├── src/
+│   ├── hardware/
+│   │   ├── ldlidar_ros2/
+│   │   ├── micro-ROS-Agent/
+│   │   ├── micro_ros_msgs/
+│   │   ├── ros2_astra_camera/
+│   │   └── my_robot_description/
+│   │       ├── config/
+│   │       ├── meshs/
+│   │       └── urdf/
+│   └── robot_bringup/
+│       ├── ESP32_code/
+│       ├── config/
+│       ├── launch/
+│       ├── maps/
+│       ├── HARDWARE_SPECIFICATIONS.md
+│       └── package.xml
+├── .gitignore
+└── README.md</code></pre>
+        </section>
+
+        <!-- 14. Research Paper -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Research Paper</h2>
+          <p>
+            This project is also connected to a research paper published on
+            arXiv:
+          </p>
+          <p>
+            <em
+              >“A Unified AI, Embedded, Simulation, and Mechanical Design
+              Approach to an Autonomous Delivery Robot.”</em
+            >
+          </p>
+          <p>
+            <a
+              href="https://arxiv.org/abs/2512.22408"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              Read on arXiv
+            </a>
+          </p>
+
+          <div class="case-study__card">
+            <h3 class="case-study__card-title">Published Research</h3>
+            <p>
+              The paper documents the unified AI, embedded, simulation, and
+              mechanical design approach behind the autonomous delivery robot
+              platform.
+            </p>
+          </div>
+        </section>
+
+        <!-- 15. Demo Videos / Gallery -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Demo Videos</h2>
+
+          <div class="case-study__demo-grid">
+            <article class="case-study__demo-card">
+              <h3 class="case-study__demo-title">Mapping Demo</h3>
+              <p>
+                Real-time SLAM mapping session showing environment reconstruction
+                and map generation on the AMR platform.
+              </p>
+              <a
+                href="https://youtu.be/Y2gumzrdt7Y?si=m39UE9KOSQfXusku"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline"
+              >
+                Watch Demo
+              </a>
+            </article>
+
+            <article class="case-study__demo-card">
+              <h3 class="case-study__demo-title">
+                Autonomous Navigation Demo
+              </h3>
+              <p>
+                Nav2-driven autonomous navigation with path planning, obstacle
+                avoidance, and velocity control in an indoor environment.
+              </p>
+              <a
+                href="https://youtu.be/pdu4tVg_QxQ?si=h2zefPR79atgquf7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline"
+              >
+                Watch Demo
+              </a>
+            </article>
+
+            <article class="case-study__demo-card">
+              <h3 class="case-study__demo-title">Real-World Robot Demo</h3>
+              <p>
+                Field demonstration of the fully assembled AMR operating in a
+                real indoor deployment scenario.
+              </p>
+              <a
+                href="https://www.youtube.com/shorts/1S7ldnf2kuI"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline"
+              >
+                Watch Demo
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <!-- 16. Engineering Highlights -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Engineering Highlights</h2>
+          <ul class="case-study__list">
+            <li>End-to-end autonomous robotics platform</li>
+            <li>ROS 2 Jazzy-based modular architecture</li>
+            <li>Real-time AI perception on edge hardware</li>
+            <li>Multi-sensor fusion between LiDAR, camera, and navigation data</li>
+            <li>YOLO-based visual perception to overcome 2D LiDAR limitations</li>
+            <li>SLAM and Nav2 autonomous navigation</li>
+            <li>Sensor fusion using EKF</li>
+            <li>ToF-based emergency safety fallback</li>
+            <li>ESP32-S3 safety and low-level control through micro-ROS</li>
+            <li>Hardware/software integration</li>
+            <li>Deployment-focused robotics engineering</li>
+            <li>Research-backed graduation project</li>
+          </ul>
+        </section>
+
+        <!-- 17. Navigation -->
+        <div class="case-study__links">
+          <a href="../index.html#projects" class="underline">Back to Projects</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer bg-less-dark">
+      <h2 class="visually-hidden">Footer</h2>
+
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+
+          <a href="../index.html" class="header__home">
+            alargam
+            <span class="visually-hidden">(to home page)</span>
+          </a>
+
+          <a
+            href="https://github.com/alargam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="GitHub profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialGitHubFooter"
+              role="img"
+            >
+              <title id="socialGitHubFooter">GitHub</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/alargam-osman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="LinkedIn profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialLinkedInFooter"
+              role="img"
+            >
+              <title id="socialLinkedInFooter">LinkedIn</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

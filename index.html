@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .section-heading {
+        margin-bottom: 48px;
+      }
+
+      .section-heading__text {
+        display: inline-block;
+        background-image: linear-gradient(
+          to right,
+          var(--accent) 75%,
+          var(--accent) 75%
+        );
+        background-position: 0 1.08em;
+        background-repeat: repeat-x;
+        background-size: 8px 4px;
+      }
+
+    </style>
+
+    <title>Alargam Mohamed Osman | AI Software Engineer</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h2 class="visually-hidden">Header</h2>
+
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+
+          <a href="./index.html" class="header__home">
+            alargam
+            <span class="visually-hidden">(to home page)</span>
+          </a>
+
+          <a
+            href="https://github.com/alargam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="GitHub profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialGitHubHeader"
+              role="img"
+            >
+              <title id="socialGitHubHeader">GitHub</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/alargam-osman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="LinkedIn profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialLinkedInHeader"
+              role="img"
+            >
+              <title id="socialLinkedInHeader">LinkedIn</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrapper hero__wrapper bottom-border">
+          <div class="hero__content">
+            <picture>
+              <source
+                media="(min-width: 62.5em)"
+                srcset="./assets/images/alargam-profile.jpg"
+              />
+              <source
+                media="(min-width: 37.5em)"
+                srcset="./assets/images/alargam-profile.jpg"
+              />
+              <img
+                class="hero__image"
+                src="./assets/images/alargam-profile-edited.jpg"
+                alt="picture of Alargam Mohamed"
+                width="100"
+                height="200"
+              />
+            </picture>
+
+            <img
+              class="hero__rings"
+              src="./assets/images/pattern-rings.svg"
+              alt=""
+              width="530"
+              height="129"
+            />
+
+            <div class="hero__text">
+              <h1 class="hero__headline header-xl">
+                <span class="hero__intro">Hi, I'm</span>
+                <span class="hero__name">Alargam Osman</span>
+                <span class="hero__role">AI Software Engineer.</span>
+              </h1>
+
+              <a href="#contact" class="hero__contact underline">Contact me</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="wrapper about__wrapper bottom-border">
+          <div class="about__content">
+            <h2 class="header-xl section-heading">
+              <span class="section-heading__text">About Me</span>
+            </h2>
+
+            <p class="about__description">
+              Software Engineer specializing in Artificial Intelligence,
+              Computer Vision, Robotics, Edge AI, and Automation systems. I focus
+              on building practical AI-powered software that transforms machine
+              learning models into real-world applications, intelligent tools,
+              and scalable automation workflows.
+            </p>
+
+            <p class="about__description">
+              My work combines software engineering with applied AI, including
+              Python, OpenCV, PyTorch, TensorFlow, YOLO, ROS 2, embedded systems,
+              model deployment, and system integration. I build end-to-end
+              solutions such as computer vision pipelines, face recognition
+              systems, autonomous robotics platforms, medical image enhancement
+              models, and AI-powered automation workflows.
+            </p>
+
+            <p class="about__description">
+              I also design automation systems using n8n, APIs, Google Sheets,
+              WordPress, and AI services to streamline business processes, reduce
+              repetitive work, and connect software tools into reliable
+              production-style workflows.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="wrapper skills__heading-wrapper">
+          <h2 class="header-xl skills__heading section-heading">
+            <span class="section-heading__text">Skills</span>
+          </h2>
+        </div>
+
+        <div class="wrapper skills__wrapper bottom-border">
+          <div class="skills__item">
+            <h3 class="skills__title">Python</h3>
+            <p class="skills__description">AI & Software Development</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Computer Vision</h3>
+            <p class="skills__description">OpenCV, YOLO, Image Processing</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Deep Learning</h3>
+            <p class="skills__description">PyTorch, TensorFlow</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Edge AI</h3>
+            <p class="skills__description">Real-Time AI Optimization</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Robotics</h3>
+            <p class="skills__description">Autonomous Systems</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">ROS 2</h3>
+            <p class="skills__description">Robot Middleware</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">SLAM</h3>
+            <p class="skills__description">Mapping & Navigation</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Sensor Fusion</h3>
+            <p class="skills__description">LiDAR, Camera & IMU</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Embedded Systems</h3>
+            <p class="skills__description">ESP32, Raspberry Pi</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">C++</h3>
+            <p class="skills__description">Robotics & Embedded Development</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Model Deployment</h3>
+            <p class="skills__description">Real-Time AI Applications</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">TensorRT / ONNX</h3>
+            <p class="skills__description">Model Optimization</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Automation</h3>
+            <p class="skills__description">n8n, APIs, Workflow Engineering</p>
+          </div>
+
+          <div class="skills__item">
+            <h3 class="skills__title">Version Control / Git</h3>
+            <p class="skills__description">GitHub & Collaborative Development</p>
+          </div>
+        </div>
+
+        <img
+          class="skills__rings"
+          src="./assets/images/pattern-rings.svg"
+          alt=""
+          width="530"
+          height="129"
+        />
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="wrapper projects__wrapper">
+          <div class="projects__grid">
+            <h2 class="projects__headline header-xl section-heading">
+              <span class="section-heading__text">Projects</span>
+            </h2>
+
+            <a href="#contact" class="projects__contact underline">
+              Contact me
+            </a>
+
+            <div
+              class="projects__filters"
+              role="group"
+              aria-label="Filter projects by category"
+            >
+              <button
+                type="button"
+                class="projects__filter projects__filter--active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                type="button"
+                class="projects__filter"
+                data-filter="robotics"
+                aria-pressed="false"
+              >
+                Robotics
+              </button>
+              <button
+                type="button"
+                class="projects__filter"
+                data-filter="computer-vision"
+                aria-pressed="false"
+              >
+                Computer Vision
+              </button>
+              <button
+                type="button"
+                class="projects__filter"
+                data-filter="automation"
+                aria-pressed="false"
+              >
+                Automation
+              </button>
+            </div>
+
+            <div
+              class="projects__item"
+              data-categories="robotics"
+            >
+              <picture class="projects__picture">
+                <img
+                  class="projects__image"
+                  src="./assets/images/AMR.png"
+                  alt="Autonomous Mobile Robot project preview"
+                  width="343"
+                  height="253"
+                />
+              </picture>
+
+              <h3 class="projects__name">Autonomous Mobile Robot</h3>
+
+              <p class="projects__tags">
+                <span>Robotics</span>
+                <span>Navigation</span>
+                <span>Computer Vision</span>
+              </p>
+
+              <div class="projects__links">
+                <a href="./projects/amr-robot.html" class="underline">
+                  View Project
+                </a>
+                <a
+                  href="https://github.com/alargam/AMR_Robot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline"
+                >
+                  View Code
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="projects__item"
+              data-categories="computer-vision"
+            >
+              <picture class="projects__picture">
+                <img
+                  class="projects__image"
+                  src="./assets/images/Face_mask.png"
+                  alt="Face Mask Detection System project preview"
+                  width="343"
+                  height="253"
+                />
+              </picture>
+
+              <h3 class="projects__name">Face Mask Detection System</h3>
+
+              <p class="projects__tags">
+                <span>Computer Vision</span>
+                <span>Deep Learning</span>
+                <span>Deployment</span>
+              </p>
+
+              <div class="projects__links">
+                <a href="./projects/face-mask-deployment.html" class="underline">
+                  View Project
+                </a>
+                <a
+                  href="https://github.com/alargam/face_mask_deployment"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline"
+                >
+                  View Code
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="projects__item"
+              data-categories="computer-vision"
+            >
+              <picture class="projects__picture">
+                <img
+                  class="projects__image"
+                  src="./assets/images/xray-super-resolution.png"
+                  alt="Medical X-Ray Super Resolution project preview"
+                  width="343"
+                  height="253"
+                />
+              </picture>
+
+              <h3 class="projects__name">Medical X-Ray Super Resolution</h3>
+
+              <p class="projects__tags">
+                <span>Medical AI</span>
+                <span>Image Enhancement</span>
+                <span>Deep Learning</span>
+              </p>
+
+              <div class="projects__links">
+                <a
+                  href="./projects/super-resolution-medical-xray.html"
+                  class="underline"
+                >
+                  View Project
+                </a>
+                <a
+                  href="https://github.com/alargam/Super_Resolution_Medical_X-Ray_Image"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline"
+                >
+                  View Code
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="projects__item"
+              data-categories="computer-vision"
+            >
+              <picture class="projects__picture">
+                <img
+                  class="projects__image"
+                  src="./assets/images/face-recognition-attendance.png"
+                  alt="Face Recognition Attendance System project preview"
+                  width="343"
+                  height="253"
+                />
+              </picture>
+
+              <h3 class="projects__name">
+                Face Recognition Attendance System
+              </h3>
+
+              <p class="projects__tags">
+                <span>Face Recognition</span>
+                <span>Attendance Automation</span>
+                <span>OpenCV</span>
+              </p>
+
+              <div class="projects__links">
+                <a
+                  href="./projects/smart-face-recognition-attendance.html"
+                  class="underline"
+                >
+                  View Project
+                </a>
+                <a
+                  href="https://github.com/alargam/Smart_Face_Recognition_Attendance_System"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline"
+                >
+                  View Code
+                </a>
+              </div>
+            </div>
+
+            <div class="projects__item" data-categories="automation">
+              <picture class="projects__picture">
+                <img
+                  class="projects__image"
+                  src="./assets/images/n8n-seo/n8n_logo.png"
+                  alt="n8n automation workflow logo"
+                  width="343"
+                  height="253"
+                />
+              </picture>
+
+              <h3 class="projects__name">n8n Business Automation Workflow</h3>
+
+              <p class="projects__tags">
+                <span>Automation</span>
+                <span>n8n</span>
+                <span>APIs</span>
+                <span>Workflow Engineering</span>
+              </p>
+
+              <div class="projects__links">
+                <a
+                  href="./projects/n8n-business-automation.html"
+                  class="underline"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact bg-less-dark">
+        <div class="wrapper contact__wrapper bottom-border">
+          <div class="contact__text">
+            <h2 class="contact__headline header-xl section-heading">
+              <span class="section-heading__text">Contact</span>
+            </h2>
+
+            <p class="contact__description">
+              Need an intelligent software solution? I design and build practical
+              AI, computer vision, robotics, and automation systems that solve
+              real problems and deliver measurable value. Contact me directly on
+              WhatsApp to discuss your project.
+            </p>
+
+            <a
+              href="https://wa.me/201154492135"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__whatsapp underline"
+            >
+              START A WHATSAPP CHAT
+            </a>
+          </div>
+        </div>
+
+        <img
+          class="contact__rings"
+          src="./assets/images/pattern-rings.svg"
+          alt=""
+          width="530"
+          height="129"
+        />
+      </section>
+    </main>
+
+    <footer class="footer bg-less-dark">
+      <h2 class="visually-hidden">Footer</h2>
+
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+
+          <a href="./index.html" class="header__home">
+            alargam
+            <span class="visually-hidden">(to home page)</span>
+          </a>
+
+          <a
+            href="https://github.com/alargam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="GitHub profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialGitHubFooter"
+              role="img"
+            >
+              <title id="socialGitHubFooter">GitHub</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/alargam-osman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header__social"
+            aria-label="LinkedIn profile"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="24"
+              aria-labelledby="socialLinkedInFooter"
+              role="img"
+            >
+              <title id="socialLinkedInFooter">LinkedIn</title>
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // Project category filters
+      const filterButtons = document.querySelectorAll(".projects__filter");
+      const projectItems = document.querySelectorAll(
+        ".projects__item[data-categories]"
+      );
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const selectedFilter = button.dataset.filter;
+
+          filterButtons.forEach(function (btn) {
+            const isActive = btn === button;
+            btn.classList.toggle("projects__filter--active", isActive);
+            btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+          });
+
+          projectItems.forEach(function (item) {
+            const categories = item.dataset.categories.split(" ");
+            const isVisible =
+              selectedFilter === "all" || categories.includes(selectedFilter);
+            item.classList.toggle("projects__item--hidden", !isVisible);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

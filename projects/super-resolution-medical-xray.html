@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="../style.css" />
+
+    <title>Medical X-Ray Super Resolution | Alargam Osman</title>
+  </head>
+
+  <body>
+    <header class="header case-study-header">
+      <h2 class="visually-hidden">Header</h2>
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+          <a href="../index.html" class="header__home">alargam<span class="visually-hidden">(to home page)</span></a>
+          <a href="https://github.com/alargam/" target="_blank" rel="noopener noreferrer" class="header__social" aria-label="GitHub profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" aria-labelledby="socialGitHubHeader" role="img"><title id="socialGitHubHeader">GitHub</title><path fill="#FFF" fill-rule="evenodd" d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" /></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alargam-osman/" target="_blank" rel="noopener noreferrer" class="header__social" aria-label="LinkedIn profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" aria-labelledby="socialLinkedInHeader" role="img"><title id="socialLinkedInHeader">LinkedIn</title><path fill="#FFF" fill-rule="evenodd" d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" /></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="case-study">
+      <div class="wrapper case-study__wrapper case-study__wrapper--wide">
+        <a href="../index.html#projects" class="case-study__back underline">Back to Projects</a>
+
+        <!-- 1. Hero / Project Summary -->
+        <header class="case-study__hero">
+          <h1 class="case-study__title">Medical X-Ray Super Resolution</h1>
+          <p class="case-study__subtitle">
+            GAN-Based Medical Image Enhancement | SRGAN / Swift-SRGAN Concepts | PyTorch
+          </p>
+          <p class="case-study__summary">
+            A medical image enhancement project that applies GAN-based super-resolution to improve
+            the visual quality of low-resolution X-ray images. The system learns to reconstruct
+            higher-resolution X-ray outputs from degraded low-resolution inputs, demonstrating how
+            deep learning can support medical image restoration research and technical experimentation.
+          </p>
+
+          <div class="case-study__quick-links">
+            <a
+              href="https://github.com/alargam/Super_Resolution_Medical_X-Ray_Image"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline"
+            >
+              GitHub Repository
+            </a>
+          </div>
+        </header>
+
+        <!-- 2. Project Overview -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Project Overview</h2>
+          <p>
+            This project focuses on enhancing low-resolution medical X-ray images using a GAN-based
+            super-resolution pipeline. The goal is to reconstruct sharper, higher-resolution X-ray
+            outputs from degraded low-resolution inputs while aiming to preserve visible anatomical
+            structures and visual clarity.
+          </p>
+          <p>
+            The project was developed as a research-oriented medical AI system, combining image
+            preprocessing, paired low-resolution/high-resolution training data, generator-discriminator
+            training, image quality evaluation, and visual comparison between low-resolution input,
+            super-resolved output, and high-resolution reference images.
+          </p>
+        </section>
+
+        <!-- 3. Dataset & Medical Imaging Context -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Dataset &amp; Medical Imaging Context</h2>
+          <p>
+            The dataset used in this project came from a private clinical X-ray image source and was
+            handled as a private medical imaging dataset for research and educational purposes.
+            High-resolution X-ray images were downscaled to generate low-resolution inputs, allowing
+            the model to learn the mapping from degraded images to enhanced super-resolution outputs.
+          </p>
+          <p>
+            This project focuses on medical X-ray image enhancement rather than natural image
+            super-resolution. It is intended for research and technical demonstration only, does not
+            provide medical diagnosis, and should not be used as a standalone clinical
+            decision-making tool.
+          </p>
+        </section>
+
+        <!-- 4. The Problem -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">The Problem</h2>
+          <p>
+            Low-resolution X-ray images can lose fine structural detail, making visual analysis
+            more difficult. Traditional interpolation-based upscaling methods can enlarge an image
+            but often produce blurry outputs and fail to recover meaningful high-frequency details.
+          </p>
+          <p>
+            The challenge was to build a deep learning model capable of producing visually sharper
+            X-ray images while aiming to preserve visible structure and reducing the quality loss
+            caused by low-resolution input.
+          </p>
+        </section>
+
+        <!-- 5. The Solution -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">The Solution</h2>
+          <p>
+            I implemented a GAN-based super-resolution pipeline inspired by SRGAN / Swift-SRGAN
+            concepts. The generator learns to reconstruct higher-resolution X-ray images from
+            low-resolution inputs, while the discriminator helps encourage outputs that are
+            visually closer to real high-resolution X-ray images.
+          </p>
+          <p>
+            The system includes preprocessing, paired dataset preparation, model training, inference,
+            image quality evaluation, and visual comparison of low-resolution, super-resolved, and
+            high-resolution images.
+          </p>
+        </section>
+
+        <!-- 6. Model Architecture -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Model Architecture</h2>
+          <p>
+            The project uses a generator-discriminator super-resolution architecture. The generator
+            reconstructs higher-resolution X-ray images from low-resolution inputs, while the
+            discriminator learns to distinguish generated super-resolution images from real
+            high-resolution references.
+          </p>
+          <p>
+            The generator uses residual learning and efficient convolutional blocks to recover
+            structural details. The discriminator provides adversarial feedback, helping the
+            generator produce sharper and more visually realistic outputs.
+          </p>
+
+          <figure class="case-study__figure">
+            <div class="case-study__picture case-study__picture--natural">
+              <img
+                src="../assets/images/xray-super-resolution/xray-architecture.png"
+                alt="GAN-based super-resolution architecture showing generator and discriminator workflow for X-ray image enhancement"
+                width="1200"
+                height="675"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="case-study__figure-caption">
+              GAN-based super-resolution architecture showing the generator and discriminator
+              workflow used for X-ray image enhancement.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- 7. Low-Resolution vs Super-Resolution Results -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Low-Resolution vs Super-Resolution Results</h2>
+          <p>
+            Side-by-side comparison of the degraded low-resolution input and the enhanced
+            super-resolution output generated by the trained model.
+          </p>
+
+          <div class="case-study__gallery">
+            <figure class="case-study__figure">
+              <div class="case-study__picture case-study__picture--natural">
+                <img
+                  src="../assets/images/xray-super-resolution/xray-lr-input.png"
+                  alt="Low-resolution X-ray image used as model input"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="case-study__figure-caption">
+                Low-Resolution Input — Degraded X-ray image used as the model input.
+              </figcaption>
+            </figure>
+            <figure class="case-study__figure">
+              <div class="case-study__picture case-study__picture--natural">
+                <img
+                  src="../assets/images/xray-super-resolution/xray-sr-output.png"
+                  alt="Super-resolution enhanced X-ray output with improved visual clarity"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="case-study__figure-caption">
+                Super-Resolution Output — Enhanced X-ray image generated by the model with improved
+                visual clarity.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 8. Workflow / Technical Process -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Workflow / Technical Process</h2>
+          <ul class="case-study__list">
+            <li>Collected and prepared a private medical X-ray image dataset</li>
+            <li>Generated low-resolution inputs by downscaling high-resolution X-ray images</li>
+            <li>Built paired LR/HR training samples for supervised super-resolution</li>
+            <li>Implemented a GAN-based generator and discriminator architecture</li>
+            <li>Trained the model to reconstruct higher-resolution outputs from low-resolution inputs</li>
+            <li>Evaluated output quality using PSNR, SSIM, and visual comparison</li>
+            <li>Built an inference pipeline for enhancing new low-resolution X-ray images</li>
+            <li>Organized the repository for reproducible training and experimentation</li>
+          </ul>
+        </section>
+
+        <!-- 9. Training & Evaluation -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Training &amp; Evaluation</h2>
+          <p>
+            The model was trained and evaluated using standard image quality metrics commonly used
+            in super-resolution tasks, including PSNR and SSIM. These metrics compare the generated
+            super-resolution output against the high-resolution reference image.
+          </p>
+
+          <div class="case-study__spec-grid">
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">PSNR</span>
+              <span class="case-study__spec-value">36.1 dB</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">SSIM</span>
+              <span class="case-study__spec-value">0.81</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Training Setup</span>
+              <span class="case-study__spec-value">Google Colab T4 GPU</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Batch Size</span>
+              <span class="case-study__spec-value">2</span>
+            </div>
+            <div class="case-study__spec">
+              <span class="case-study__spec-label">Training Epochs</span>
+              <span class="case-study__spec-value">7</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. Loss Function -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Loss Function</h2>
+          <p>
+            The generator optimization combines multiple loss components to balance pixel-level
+            reconstruction accuracy and perceptual image quality.
+          </p>
+
+          <ul class="case-study__list">
+            <li><strong>Image Loss:</strong> pixel-level reconstruction error between generated and reference images</li>
+            <li><strong>Content Loss:</strong> feature-level similarity used to preserve structural information</li>
+            <li><strong>Adversarial Loss:</strong> discriminator-guided feedback for visually realistic output generation</li>
+            <li><strong>Total Variation Loss:</strong> smoothness regularization used to reduce unwanted artifacts</li>
+          </ul>
+
+          <pre class="case-study__code"><code>Total Loss = Image Loss + Perceptual Loss + TV Loss
+Perceptual Loss = Adversarial Loss + Content Loss</code></pre>
+        </section>
+
+        <!-- 11. Tools & Technologies -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Tools &amp; Technologies</h2>
+          <ul class="case-study__list">
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>GANs</li>
+            <li>SRGAN / Swift-SRGAN Concepts</li>
+            <li>OpenCV</li>
+            <li>NumPy</li>
+            <li>Medical Imaging</li>
+            <li>PSNR / SSIM Evaluation</li>
+            <li>Google Colab T4 GPU</li>
+          </ul>
+        </section>
+
+        <!-- 12. Key Features -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Key Features</h2>
+          <ul class="case-study__list">
+            <li>GAN-based X-ray super-resolution pipeline</li>
+            <li>Low-resolution to higher-resolution image reconstruction</li>
+            <li>Generator-discriminator training workflow</li>
+            <li>Medical image preprocessing and paired dataset preparation</li>
+            <li>PSNR and SSIM evaluation</li>
+            <li>Before/after visual comparison</li>
+            <li>Research-oriented medical AI project structure</li>
+          </ul>
+        </section>
+
+        <!-- 13. Results / Impact -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Results / Impact</h2>
+          <p>
+            The model produced enhanced X-ray outputs with improved visual sharpness compared to
+            low-resolution inputs. The results demonstrate how GAN-based super-resolution can be
+            applied to medical image enhancement research and how deep learning can help recover
+            visual detail from degraded image data.
+          </p>
+          <p>
+            This project is not intended to replace clinical diagnosis. Instead, it demonstrates an
+            applied medical AI workflow for image restoration, model training, evaluation, and visual
+            comparison.
+          </p>
+        </section>
+
+        <!-- 14. Repository Structure -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Repository Structure</h2>
+          <pre class="case-study__code"><code>Super_Resolution_Medical_X-Ray_Image/
+├── assets/
+├── data/
+├── src/
+│   ├── custom_loss.py
+│   ├── make_dataset.py
+│   ├── model_architecture.py
+│   ├── model_metrics.py
+│   ├── non_dl_super_resolution.py
+│   ├── prepare_data.py
+│   ├── split_dataset.py
+│   └── train_model.py
+├── .gitignore
+├── README.md
+└── requirements.txt</code></pre>
+        </section>
+
+        <!-- 15. Skills Demonstrated -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Skills Demonstrated</h2>
+          <ul class="case-study__list">
+            <li>Medical image processing</li>
+            <li>GAN-based super-resolution</li>
+            <li>PyTorch model development</li>
+            <li>Generator-discriminator training</li>
+            <li>Image quality evaluation using PSNR and SSIM</li>
+            <li>Dataset preprocessing and LR/HR pair generation</li>
+            <li>Deep learning experimentation</li>
+            <li>Research-oriented AI engineering</li>
+          </ul>
+        </section>
+
+        <!-- 16. Engineering Highlights -->
+        <section class="case-study__section">
+          <h2 class="case-study__section-title">Engineering Highlights</h2>
+          <ul class="case-study__list">
+            <li>Built a GAN-based medical X-ray enhancement pipeline</li>
+            <li>Prepared paired low-resolution and high-resolution X-ray training samples</li>
+            <li>Implemented generator and discriminator training workflow</li>
+            <li>Evaluated model output with PSNR and SSIM</li>
+            <li>Created visual comparison between LR input and SR output</li>
+            <li>Structured the repository for reproducible training and evaluation</li>
+            <li>Applied deep learning to medical image restoration research</li>
+          </ul>
+        </section>
+
+        <!-- 17. Bottom Navigation -->
+        <div class="case-study__links">
+          <a href="../index.html#projects" class="underline">Back to Projects</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer bg-less-dark">
+      <h2 class="visually-hidden">Footer</h2>
+      <div class="wrapper">
+        <nav class="header__nav">
+          <h2 class="visually-hidden">Navigation</h2>
+          <a href="../index.html" class="header__home">alargam<span class="visually-hidden">(to home page)</span></a>
+          <a href="https://github.com/alargam/" target="_blank" rel="noopener noreferrer" class="header__social" aria-label="GitHub profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" aria-labelledby="socialGitHubFooter" role="img"><title id="socialGitHubFooter">GitHub</title><path fill="#FFF" fill-rule="evenodd" d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" /></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alargam-osman/" target="_blank" rel="noopener noreferrer" class="header__social" aria-label="LinkedIn profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" aria-labelledby="socialLinkedInFooter" role="img"><title id="socialLinkedInFooter">LinkedIn</title><path fill="#FFF" fill-rule="evenodd" d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" /></svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
