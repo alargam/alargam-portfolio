@@ -8,7 +8,7 @@ export default function FooterOne() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <p className="copy-right-text"> © 2026 Argam Mohamed. All rights reserved.</p>
+              <p className="copy-right-text">© 2026 Argam Osman. All rights reserved.</p>
             </div>
           </div>
         </div>

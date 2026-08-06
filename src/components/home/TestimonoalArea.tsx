@@ -21,13 +21,11 @@ export default function TestimonoalArea() {
                   <img src="assets/images/testimonials/author1.jpg" alt="Author" />
                 </div>
                 <div className="text">
-                  Financial planners help people to knowledge in about how to
-                  invest and in save their moneye the most efficient way eve plan
-                  ners help people tioniio know ledige in about how.
+                  Strong engineering judgment and a thoughtful approach to building reliable AI systems with real-world impact.
                 </div>
                 <div className="testi-des">
-                  <h5>Zonathon Doe</h5>
-                  <span>CEO & Founder X</span>
+                  <h5>Technical Collaborator</h5>
+                  <span>AI Systems Engineering</span>
                 </div>
               </div>
 
@@ -39,13 +37,11 @@ export default function TestimonoalArea() {
                   <img src="assets/images/testimonials/author2.jpg" alt="Author" />
                 </div>
                 <div className="text">
-                  Asian planners help people to knowledge in about how to
-                  invest and in save their moneye the most efficient way eve plan
-                  ners help people tioniio know ledige in about how.
+                  Clear systems thinking, practical implementation skills, and a strong focus on solving engineering problems end to end.
                 </div>
                 <div className="testi-des">
-                  <h5>Martin Smith</h5>
-                  <span>CEO & Founder Google</span>
+                  <h5>Engineering Partner</h5>
+                  <span>Backend & Automation</span>
                 </div>
               </div>
 
@@ -57,13 +53,11 @@ export default function TestimonoalArea() {
                   <img src="assets/images/testimonials/author3.jpg" alt="Author" />
                 </div>
                 <div className="text">
-                  Hello  planners help people to knowledge in about how to
-                  invest and in save their moneye the most efficient way eve plan
-                  ners help people tioniio know ledige in about how.
+                  Consistently translates complex ideas into structured, scalable solutions across AI and software engineering domains.
                 </div>
                 <div className="testi-des">
-                  <h5>Methail Dev</h5>
-                  <span>Managing Director -  Paydesk</span>
+                  <h5>Product Engineering</h5>
+                  <span>Systems Design</span>
                 </div>
               </div>
 
@@ -75,13 +69,11 @@ export default function TestimonoalArea() {
                   <img src="assets/images/testimonials/author4.jpg" alt="Author" />
                 </div>
                 <div className="text">
-                  Financial planners help people to knowledge in about how to
-                  invest and in save their moneye the most efficient way eve plan
-                  ners help people tioniio know ledige in about how.
+                  Brings a balance of technical depth, curiosity, and execution that is valuable in modern AI-driven development teams.
                 </div>
                 <div className="testi-des">
-                  <h5>Eliana tweet</h5>
-                  <span>CEO & Founder Tesla</span>
+                  <h5>Innovation Focus</h5>
+                  <span>Robotics & AI</span>
                 </div>
               </div>
 
@@ -93,13 +85,11 @@ export default function TestimonoalArea() {
                   <img src="assets/images/testimonials/author5.jpg" alt="Author" />
                 </div>
                 <div className="text">
-                  Yelp  planners help people to knowledge in about how to
-                  invest and in save their moneye the most efficient way eve plan
-                  ners help people tioniio know ledige in about how.
+                  Thoughtful engineering partner with strong execution across software architecture, automation, and intelligent systems.
                 </div>
                 <div className="testi-des">
-                  <h5>Henry Clark</h5>
-                  <span>Founder Oxyzen</span>
+                  <h5>Engineering Network</h5>
+                  <span>AI & Backend Systems</span>
                 </div>
               </div>
 

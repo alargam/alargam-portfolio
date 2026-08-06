@@ -2,22 +2,25 @@ import type { Metadata } from 'next';
 import "../styles/index.css";
 
 export const metadata: Metadata = {
-  title: "Argam | AI Systems Engineer",
+  metadataBase: new URL('https://alargam.vercel.app'),
+  title: 'Argam Osman | AI Systems Engineer',
   description:
-    "AI Systems Engineer specializing in Backend Engineering, Artificial Intelligence, Intelligent Automation, and Robotics.",
+    'AI Systems Engineer building AI-powered applications, backend systems, automation workflows, and robotics solutions.',
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
   openGraph: {
-    title: "Argam | AI Systems Engineer",
+    title: 'Argam Osman | AI Systems Engineer',
     description:
-      "AI Systems Engineer specializing in Backend Engineering, Artificial Intelligence, Intelligent Automation, and Robotics.",
+      'AI Systems Engineer building AI-powered applications, backend systems, automation workflows, and robotics solutions.',
+    url: 'https://alargam.vercel.app',
+    images: ['/favicon.ico'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Argam | AI Systems Engineer",
+    title: 'Argam Osman | AI Systems Engineer',
     description:
-      "AI Systems Engineer specializing in Backend Engineering, Artificial Intelligence, Intelligent Automation, and Robotics.",
+      'AI Systems Engineer building AI-powered applications, backend systems, automation workflows, and robotics solutions.',
     images: ['/favicon.ico'],
   },
 };

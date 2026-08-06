@@ -99,7 +99,7 @@ export default function BlogDetailsArea() {
                                       <span className="post-meta"> July 14, 2022</span>
                                       <h5><a href="#">Eleanor Fant</a></h5>
                                     </div>
-                                    <p>One’s of the best template out of there. design, code quality, updates etc everything you needs guys, buy it you won’t regret it!</p>
+                                    <p>Excellent work combining technical depth and thoughtful execution. The systems thinking and product focus stand out clearly.</p>
                                     <div className="postbox__comment-reply">
                                       <a href="#">Reply</a>
                                     </div>
