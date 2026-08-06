@@ -35,9 +35,9 @@ export default function AboutArea() {
             </div>
             <div className="col-lg-9 col-sm-9">
               <div className="about-content-part wow fadeInUp delay-0-2s">
-                <p>I am Alargam Mohamed, an AI Systems Engineer with approximately 3 years of hands-on experience building AI applications, backend systems, robotics projects, and intelligent automation solutions.
-                My work focuses on transforming ideas into scalable, production-ready software using modern backend technologies, artificial intelligence, and real-world engineering practices.
-                I enjoy solving complex problems and continuously improving my engineering skills while building practical products that create real impact.</p>
+                <p>I am Alargam Osman, an AI Systems Engineer focused on building intelligent systems, scalable backend platforms, robotics solutions, and automation workflows.
+                I develop AI applications that combine software engineering, artificial intelligence, computer vision, and real-world systems integration to transform complex ideas into reliable, practical solutions.
+                My work spans AI engineering, backend development, robotics, and automation, where I build end-to-end systems that solve real-world problems.</p>
               </div>
               <div className="hero-counter-area d-flex justify-content-between wow fadeInUp delay-0-4s">
                 {counter_data.map((item, i) => (
