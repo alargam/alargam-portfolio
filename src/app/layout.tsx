@@ -3,25 +3,33 @@ import "../styles/index.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alargam.vercel.app'),
-  title: 'Argam Osman | AI Systems Engineer',
+  title: 'Argam | AI Systems Engineer',
   description:
-    'AI Systems Engineer building AI-powered applications, backend systems, automation workflows, and robotics solutions.',
+    'AI Systems Engineer specializing in Backend Engineering, Artificial Intelligence, Automation, and Robotics.',
+  keywords: ['AI Engineer', 'Backend Engineer', 'Robotics', 'Automation', 'Next.js', 'Python'],
+  applicationName: 'Argam Portfolio',
+  alternates: {
+    canonical: 'https://alargam.vercel.app',
+  },
   icons: {
     icon: '/favicon.ico',
   },
   openGraph: {
-    title: 'Argam Osman | AI Systems Engineer',
+    type: 'website',
+    locale: 'en_US',
+    title: 'Argam | AI Systems Engineer',
     description:
-      'AI Systems Engineer building AI-powered applications, backend systems, automation workflows, and robotics solutions.',
+      'AI Systems Engineer specializing in Backend Engineering, Artificial Intelligence, Automation, and Robotics.',
     url: 'https://alargam.vercel.app',
-    images: ['/favicon.ico'],
+    siteName: 'Argam Portfolio',
+    images: ['/assets/images/about/my_self.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Argam Osman | AI Systems Engineer',
+    title: 'Argam | AI Systems Engineer',
     description:
-      'AI Systems Engineer building AI-powered applications, backend systems, automation workflows, and robotics solutions.',
-    images: ['/favicon.ico'],
+      'AI Systems Engineer specializing in Backend Engineering, Artificial Intelligence, Automation, and Robotics.',
+    images: ['/assets/images/about/my_self.png'],
   },
 };
 

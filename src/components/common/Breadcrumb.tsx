@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-export default function Breadcrumb({ title, style_2, style_3, style_4 }: any) {
+export default function Breadcrumb({ title, subtitle, tagline, style_2, style_3, style_4 }: any) {
   return (
     <>
       <section className="single-page-hero-area">
@@ -9,11 +9,18 @@ export default function Breadcrumb({ title, style_2, style_3, style_4 }: any) {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <h2>{title}</h2>
+              {style_3 && subtitle && (
+                <p style={{ margin: '0 auto 18px', maxWidth: '860px', fontSize: '1.1rem', fontWeight: 600, letterSpacing: '0.01em', lineHeight: 1.4, color: 'rgba(7, 7, 7, 0.9)' }}>
+                  {subtitle}
+                </p>
+              )}
+              {style_3 && tagline && (
+                <p style={{ margin: '0 auto', maxWidth: '920px', fontSize: '0.98rem', letterSpacing: '0.02em', color: 'rgba(7, 7, 7, 0.68)', lineHeight: 1.65, whiteSpace: 'nowrap' }}>
+                  {tagline}
+                </p>
+              )}
               {style_2 &&
-                <p>A Collection of My Latest Works and Achievements: Discover the Projects that Define My Passion and Skills</p>
-              }
-              {style_3 &&
-                <p>Fill out the form below to get in touch with me. I am always excited to hear about new opportunities and I will do my best to respond to your inquiry within 24 hours.</p>
+                <p>Explore a collection of real-world engineering projects that showcase my experience in AI, backend engineering, robotics, and intelligent automation.</p>
               }
               {style_4 &&
                 <p>Stories, Advice, and Inspiration for the Curious Mind</p>

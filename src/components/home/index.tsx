@@ -5,10 +5,9 @@ import BrandArea from './BrandArea'
 import AboutArea from './AboutArea'
 import ServiceArea from './ServiceArea'
 import HeaderOne from '@/layouts/headers/HeaderOne'
-import PortfolioArea from './PortfolioArea'
 import TestimonoalArea from './TestimonoalArea'
 import BlogArea from './BlogArea'
-import ContactArea from './ContactArea'
+import ExperienceArea from './ExperienceArea'
 import FooterOne from '@/layouts/footers/FooterOne'
 
 const showTestimonials = false
@@ -25,10 +24,9 @@ export default function Home() {
             <BrandArea />
             <AboutArea />
             <ServiceArea />
-            <PortfolioArea />
+            <ExperienceArea />
             {showTestimonials && <TestimonoalArea />}
             {showBlog && <BlogArea />}
-            <ContactArea />
           </main>
           <FooterOne />
         </div>

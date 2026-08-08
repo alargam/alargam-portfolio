@@ -27,6 +27,13 @@ const companyLogos = [
     // رفعنا نسبة التكبير هنا من 1.4 إلى 1.6
     scale: 1.6, 
   },
+  {
+    src: "/assets/images/companies/cellula.jpeg",
+    alt: "Cellula Technologies logo",
+    width: 260,
+    height: 88,
+    scale: 1.75,
+  },
 ]
 
 export default function BrandArea() {

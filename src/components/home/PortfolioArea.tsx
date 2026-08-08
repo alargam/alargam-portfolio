@@ -56,6 +56,7 @@ const portfolio_data:DataType[] = [
 ];
 
 export default function PortfolioArea() {
+  const showCategoryTags = false;
 
   // photoIndex
   const [photoIndex, setPhotoIndex] = useState(null);
@@ -86,7 +87,7 @@ export default function PortfolioArea() {
                   onClick={() => handleImagePopup(i)} className="work-popup">
                   <div className="portfolio-box">
                     <Image src={item.image} alt="" style={{ height: "auto"}} data-rjs="2" />
-                    <span className="portfolio-category">{item.category}</span>
+                    {showCategoryTags && <span className="portfolio-category">{item.category}</span>}
                     <div className="portfolio-caption">
                       <h1>{item.title}</h1>
                     </div>

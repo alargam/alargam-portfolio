@@ -23,29 +23,31 @@ export default function Wrapper({ children }: any) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // animation
-    const timer = setTimeout(() => {
+    const timer = window.setTimeout(() => {
       animationCreate();
-    }, 100);
+    }, 120);
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => window.clearTimeout(timer);
+  }, [pathname]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      ScrollSmoother.create({
-        smooth: 1.35,
-        effects: true,
-        smoothTouch: false,
-        normalizeScroll: false,
-        ignoreMobileResize: true,
-      });
+    if (typeof window === 'undefined') return
+
+    const instance = ScrollSmoother.create({
+      smooth: 1.35,
+      effects: true,
+      smoothTouch: false,
+      normalizeScroll: false,
+      ignoreMobileResize: true,
+    })
+
+    return () => {
+      instance?.kill?.()
     }
   }, [pathname]);
 
   useEffect(() => {
     scrollSmother();
-
   }, [pathname]);
 
 
