@@ -22,7 +22,7 @@ export default function HeroArea() {
                 <p>I build intelligent systems combining AI, backend engineering, automation, and robotics to solve real-world problems.</p>
                 <div className="hero-btns">
                   <a className="theme-btn" href="/projects">View Projects</a>
-                  <a className="theme-btn theme-btn-two" href="/cv/Alargam_Osman_Resume.pdf" download>Download CV</a>
+                  <a className="theme-btn theme-btn-two" href="/contact">Contact Me</a>
                 </div>
               </div>
             </div>
