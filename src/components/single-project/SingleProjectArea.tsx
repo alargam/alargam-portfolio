@@ -1,15 +1,16 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
-import architectureImage from '../../../assets/images/amr/amr-architecture.png'
-import yoloDetectionImage from '../../../assets/images/amr/Yolo detection.png'
-import rvizMappingImage from '../../../assets/images/amr/amr-rviz-mapping.png'
-import nav2Image from '../../../assets/images/amr/amr-nav2.png'
-import realRobotImage from '../../../assets/images/amr/amr-real-robot.jpg'
-import dashboardImage from '../../../assets/images/amr/dashboard.png'
-import emergencyImage from '../../../assets/images/amr/Emergency.png'
 import ImagePopup from '@/modals/ImagePopup'
 import { Project } from '@/data/projects'
+
+const deliveroArchitectureImage = '/assets/images/amr/amr-architecture.png'
+const deliveroYoloDetectionImage = '/assets/images/amr/Yolo detection.png'
+const deliveroRvizMappingImage = '/assets/images/amr/amr-rviz-mapping.png'
+const deliveroNav2Image = '/assets/images/amr/amr-nav2.png'
+const deliveroRealRobotImage = '/assets/images/amr/amr-real-robot.jpg'
+const deliveroDashboardImage = '/assets/images/amr/dashboard.png'
+const deliveroEmergencyImage = '/assets/images/amr/Emergency.png'
 
 interface SingleProjectAreaProps {
   project: Project
@@ -819,7 +820,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <div style={{ ...mediaFrameStyle, width: '100%', maxWidth: '1020px', minHeight: '520px' }}>
                       <Image
-                        src={architectureImage}
+                        src={deliveroArchitectureImage}
                         alt="Delivero system architecture diagram"
                         fill
                         priority
@@ -854,7 +855,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-7">
                       <div className="wow fadeInUp delay-0-3s" style={mediaFrameStyle}>
                         <Image
-                          src={yoloDetectionImage}
+                          src={deliveroYoloDetectionImage}
                           alt="Delivero YOLO detection visualization"
                           fill
                           priority
@@ -873,7 +874,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-7">
                       <div className="wow fadeInUp delay-0-2s" style={mediaFrameStyle}>
                         <Image
-                          src={rvizMappingImage}
+                          src={deliveroRvizMappingImage}
                           alt="Delivero RViz mapping and sensor fusion visualization"
                           fill
                           priority
@@ -920,7 +921,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-7">
                       <div className="wow fadeInUp delay-0-3s" style={mediaFrameStyle}>
                         <Image
-                          src={nav2Image}
+                          src={deliveroNav2Image}
                           alt="Delivero ROS 2 Nav2 autonomous navigation"
                           fill
                           priority
@@ -954,7 +955,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                       <div className="wow fadeInUp delay-0-3s">
                         <div style={{ position: 'relative', width: '100%', minHeight: '320px', borderRadius: '18px', overflow: 'hidden', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)' }}>
                           <Image
-                            src={emergencyImage}
+                            src={deliveroEmergencyImage}
                             alt="ESP32-S3 safety fallback behavior"
                             fill
                             priority
@@ -974,7 +975,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-7 order-lg-1 order-2">
                       <div className="wow fadeInUp delay-0-3s" style={mediaFrameStyle}>
                         <Image
-                          src={realRobotImage}
+                          src={deliveroRealRobotImage}
                           alt="Delivero real robot"
                           fill
                           priority
@@ -1010,7 +1011,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-7 order-lg-1 order-2">
                       <div className="wow fadeInUp delay-0-3s" style={mediaFrameStyle}>
                         <Image
-                          src={dashboardImage}
+                          src={deliveroDashboardImage}
                           alt="Delivero IoT dashboard for robot telemetry and GPS tracking"
                           fill
                           priority
