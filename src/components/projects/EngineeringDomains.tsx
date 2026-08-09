@@ -3,27 +3,27 @@ import React from 'react'
 const domains = [
   {
     title: 'AI Engineering',
-    points: ['Machine Learning', 'Deep Learning', 'Large Language Models', 'Computer Vision', 'AI Systems', 'Model Deployment'],
+    points: ['Machine Learning', 'Deep Learning', 'Large Language Models', 'AI Systems', 'Model Deployment', 'Applied AI'],
   },
   {
     title: 'Backend Engineering',
-    points: ['API Development', 'Scalable Systems', 'Database Design', 'Authentication & Authorization', 'Microservices', 'Distributed Systems'],
+    points: ['REST API Development', 'FastAPI', 'Database Design', 'Authentication & Authorization', 'Backend Architecture', 'Production APIs'],
   },
   {
     title: 'Computer Vision',
-    points: ['Object Detection', 'Image Processing', 'Visual Intelligence', 'Real-Time Inference', 'Model Optimization', 'Video Analytics'],
+    points: ['Object Detection', 'Image Processing', 'Real-Time Inference', 'Model Optimization', 'Visual Intelligence', 'Video Analytics'],
   },
   {
     title: 'Robotics Engineering',
-    points: ['Autonomous Navigation', 'Robot Perception', 'Sensor Fusion', 'SLAM', 'Motion Planning', 'Simulation'],
+    points: ['Autonomous Navigation', 'Robot Perception', 'Sensor Fusion', 'SLAM', 'Motion Planning', 'ROS 2'],
   },
   {
-    title: 'AI Automation',
-    points: ['AI Agents', 'Workflow Automation', 'Business Process Automation', 'API Integration', 'Intelligent Workflows', 'Multi-Agent Systems'],
+    title: 'Intelligent Automation',
+    points: ['n8n Workflows', 'AI-Powered Automation', 'Business Process Automation', 'API Integration', 'Content Automation', 'Workflow Orchestration'],
   },
   {
-    title: 'Cloud & Infrastructure',
-    points: ['Cloud Deployment', 'Containerization', 'CI/CD', 'Infrastructure', 'Linux Systems', 'Version Control'],
+    title: 'Deployment & Infrastructure',
+    points: ['Docker', 'Cloud Deployment', 'Linux', 'CI/CD', 'Git & GitHub', 'Production Deployment'],
   },
 ]
 
@@ -35,7 +35,7 @@ export default function EngineeringDomains() {
           <div className="col-xl-12 col-lg-12">
             <div className="section-title section-black-title wow fadeInUp delay-0-2s">
               <h2 style={{ color: '#fff' }}>Engineering Domains</h2>
-              <p style={{ color: 'rgba(255,255,255,0.8)' }}>Core engineering areas I specialize in.</p>
+              <p style={{ color: 'rgba(255,255,255,0.8)' }}>Core technical areas reflected across my work.</p>
             </div>
           </div>
         </div>

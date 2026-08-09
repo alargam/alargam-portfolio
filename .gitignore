@@ -110,3 +110,14 @@ Thumbs.db
 /.zshrc
 
 /.idea
+
+# -----------------------------------------------------------------------------
+# Local project memory / generated helper files
+# -----------------------------------------------------------------------------
+
+/docs/
+/project_tree.txt
+/structure.txt
+
+# Local source assets not served directly by Next.js
+/assets/

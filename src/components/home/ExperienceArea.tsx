@@ -5,33 +5,33 @@ const experiences = [
     company: 'Spaceborn',
     role: 'Software Engineer',
     date: '2026',
-    description: 'Contributed to the development of autonomous robotics software, working on simulation-based workflows and AI-enabled robotic systems.',
+    description: 'Contributed to autonomous robotics software involving ROS 2, simulation, perception, and AI-enabled robotic workflows.',
     points: [
-      'Worked with ROS2-based robotics workflows and simulation environments to test autonomous behaviors before real-world deployment.',
-      'Contributed to software components connecting perception, decision-making, and robotic system workflows.',
-      'Supported testing and debugging of autonomous behaviors using simulation scenarios.',
-      'Worked with AI-based perception components and their integration into robotic pipelines.',
-      'Followed engineering practices including Git workflows, modular code organization, and technical documentation.',
+      'Developed and tested ROS 2-based robotics workflows in simulation environments before physical deployment.',
+      'Worked on software integration between perception, decision-making, and robotic system components.',
+      'Tested and debugged autonomous behaviors across simulated operating scenarios.',
+      'Integrated AI-based perception components into robotic software pipelines.',
+      'Used Git-based development workflows, modular software organization, and technical documentation.',
     ],
   },
   {
     company: 'URCA',
     role: 'AI Engineering Intern',
     date: 'May 2026 – Jul 2026',
-    description: 'Worked on practical AI engineering concepts focused on building applications powered by large language models and intelligent workflows.',
+    description: 'Built and evaluated LLM-based application workflows involving prompting, agents, tool usage, RAG concepts, and API integration.',
     points: [
-      'Developed experiments with LLM-based applications using prompt engineering and structured workflows.',
-      'Explored AI agent architectures, including tool usage, task planning, and multi-step reasoning workflows.',
-      'Worked with concepts behind RAG systems, context management, and improving LLM responses.',
-      'Studied how AI models are integrated into production applications through APIs and supporting software layers.',
-      'Documented experiments and evaluated different approaches for improving AI system reliability.',
+      'Built experiments for LLM-powered applications using structured prompting and multi-step workflows.',
+      'Explored agent architectures involving tool usage, task planning, and multi-step execution.',
+      'Worked with RAG, context management, and techniques for improving response quality.',
+      'Studied integration patterns for connecting LLMs with APIs and application backends.',
+      'Evaluated alternative approaches for improving AI system reliability and documented findings.',
     ],
   },
   {
     company: 'Outlier',
     role: 'AI Model Evaluator',
     date: 'Sep 2024 – Mar 2025',
-    description: 'Evaluated AI-generated solutions and model responses across programming and reasoning tasks.',
+    description: 'Evaluated AI-generated code and reasoning outputs for correctness, instruction following, and technical quality.',
     points: [
       'Reviewed Python and C++ generated solutions, analyzing correctness, code quality, and algorithmic reasoning.',
       'Evaluated LLM responses for instruction following, technical accuracy, and consistency.',
@@ -77,7 +77,7 @@ export default function ExperienceArea() {
             <div className="section-title section-black-title wow fadeInUp delay-0-2s">
               <h2 style={{ color: '#fff' }}>Professional Experience</h2>
               <p style={{ color: 'rgba(255,255,255,0.7)' }}>
-                A journey of continuous growth through machine learning, AI engineering, and intelligent systems development.
+                Hands-on experience across AI evaluation, machine learning, LLM applications, and autonomous robotics software.
               </p>
             </div>
           </div>

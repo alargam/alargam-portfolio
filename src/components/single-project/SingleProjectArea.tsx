@@ -98,15 +98,15 @@ const pageShellStyle = {
 }
 
 const sectionSpacing = {
-  paddingTop: '96px',
-  paddingBottom: '96px',
+  paddingTop: 'clamp(35px, 4.8vw, 68px)',
+  paddingBottom: 'clamp(35px, 4.8vw, 68px)',
 }
 
 const eyebrowStyle = {
   display: 'block',
   marginBottom: '18px',
   color: 'rgba(255,255,255,0.75)',
-  fontSize: '0.82rem',
+  fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)',
   fontWeight: 600,
   letterSpacing: '0.24em',
   textTransform: 'uppercase' as const,
@@ -114,16 +114,16 @@ const eyebrowStyle = {
 
 const sectionHeadingStyle = {
   color: '#fff',
-  fontSize: 'clamp(2rem, 3vw, 2.55rem)',
+  fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
   fontWeight: 300,
-  lineHeight: 1.05,
+  lineHeight: 1.08,
   margin: 0,
 }
 
 const sectionCopyStyle = {
   color: 'rgba(255,255,255,0.74)',
-  fontSize: '1rem',
-  lineHeight: 1.9,
+  fontSize: 'clamp(0.98rem, 1.1vw, 1.125rem)',
+  lineHeight: 1.68,
   maxWidth: '680px',
 }
 
@@ -141,7 +141,7 @@ const sectionLabelStyle = {
   display: 'block',
   marginBottom: '20px',
   color: 'rgba(255,255,255,0.75)',
-  fontSize: '0.82rem',
+  fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)',
   fontWeight: 600,
   letterSpacing: '0.24em',
   textTransform: 'uppercase' as const,
@@ -152,8 +152,9 @@ const tagPillStyle = {
   border: '1px solid rgba(255,255,255,0.12)',
   borderRadius: '999px',
   padding: '10px 14px',
-  fontSize: '0.9rem',
+  fontSize: 'clamp(0.82rem, 0.9vw, 0.9rem)',
   fontWeight: 500,
+  lineHeight: 1.3,
   marginBottom: '10px',
 }
 
@@ -165,7 +166,7 @@ const techChipStyle = {
   borderRadius: '999px',
   background: 'rgba(0,0,0,0.06)',
   color: '#111',
-  fontSize: '0.95rem',
+  fontSize: 'clamp(0.88rem, 1vw, 0.95rem)',
   fontWeight: 600,
   letterSpacing: '0.01em',
   marginRight: '10px',
@@ -203,7 +204,7 @@ const EditorialBlock = ({ label, heading, description, cards, delayStart = 4 }: 
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.72)', fontSize: '0.82rem', letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: '10px' }}>
               {card.number}
             </span>
-            <h3 style={{ color: '#fff', fontSize: '1.05rem', margin: '0 0 10px', lineHeight: 1.25 }}>{card.title}</h3>
+            <h3 style={{ color: '#fff', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', margin: '0 0 10px', lineHeight: 1.25 }}>{card.title}</h3>
             <p style={{ color: 'rgba(255,255,255,0.76)', margin: 0, lineHeight: 1.75, fontSize: '0.95rem' }}>{card.text}</p>
           </div>
         </div>
@@ -211,6 +212,422 @@ const EditorialBlock = ({ label, heading, description, cards, delayStart = 4 }: 
     </div>
   </div>
 )
+
+const externalLinkStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '10px',
+  padding: '12px 18px',
+  borderRadius: '999px',
+  background: '#050505',
+  border: '1px solid rgba(255,255,255,0.16)',
+  color: '#fff',
+  textDecoration: 'none',
+  fontSize: '14px',
+  fontWeight: 700,
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase' as const,
+}
+
+const backToProjectsStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '10px',
+  color: 'rgba(255,255,255,0.94)',
+  fontSize: 'clamp(0.875rem, 0.9vw, 1rem)',
+  fontWeight: 700,
+  letterSpacing: '0.14em',
+  textTransform: 'uppercase' as const,
+  textDecoration: 'none',
+  padding: '10px 0',
+  marginBottom: '32px',
+  transition: 'color 0.3s ease',
+}
+
+const heroSummaryStyle = {
+  color: 'rgba(255,255,255,0.78)',
+  fontSize: 'clamp(1rem, 1.2vw, 1.125rem)',
+  marginBottom: '22px',
+  maxWidth: '600px',
+  lineHeight: 1.65,
+}
+
+const heroTechLineStyle = {
+  color: 'rgba(255,255,255,0.65)',
+  fontSize: 'clamp(0.82rem, 0.9vw, 0.9rem)',
+  fontWeight: 600,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase' as const,
+  lineHeight: 1.65,
+  marginBottom: '26px',
+}
+
+const heroButtonRowStyle = {
+  display: 'flex',
+  flexWrap: 'wrap' as const,
+  gap: '14px',
+}
+
+const projectHeroIntroductions: Partial<Record<string, string>> = {
+  'resume-reviewer-api': 'AI-powered backend that analyzes resumes against job descriptions and returns structured feedback, scores, and recommendations.',
+  delivero: 'Autonomous mobile robot designed for intelligent delivery, combining navigation, perception, localization, and embedded control.',
+  'seo-automation': 'Automated content workflow that takes structured SEO inputs, generates content with AI, and prepares WordPress drafts through n8n.',
+}
+
+const getProjectHeroIntro = (project: Project) => projectHeroIntroductions[project.slug] ?? project.description
+
+const caseStudyHeadingFontSize = 'clamp(1.75rem, 4vw, 2.625rem)'
+const lightSectionHeadingFontSize = 'clamp(1.7rem, 3.8vw, 2.4rem)'
+
+
+const ProjectImageFrame = ({
+  src,
+  alt,
+  title,
+  subtitle,
+  minHeight = '460px',
+  objectFit = 'cover',
+}: {
+  src?: string
+  alt: string
+  title: string
+  subtitle?: string
+  minHeight?: string
+  objectFit?: 'cover' | 'contain'
+}) => {
+  const [imageFailed, setImageFailed] = useState(false)
+
+  if (!src || imageFailed) {
+    return <PlaceholderPanel title={title} subtitle={subtitle} height={minHeight} />
+  }
+
+  return (
+    <div style={{ ...mediaFrameStyle, minHeight }}>
+      <img
+        src={src}
+        alt={alt}
+        onError={() => setImageFailed(true)}
+        style={{ width: '100%', height: '100%', minHeight, objectFit, display: 'block' }}
+      />
+    </div>
+  )
+}
+
+const ProjectCaseStudyHero = ({ project }: { project: Project }) => (
+  <div className="container" style={{ maxWidth: '1200px', width: '100%' }}>
+    <div className="row align-items-center g-4 g-lg-5" style={{ padding: '0 0 24px' }}>
+      <div className="col-lg-6">
+        <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '620px' }}>
+          <a href="/projects" style={backToProjectsStyle}>
+            <span aria-hidden="true">←</span>
+            <span>BACK TO PROJECTS</span>
+          </a>
+          <span style={eyebrowStyle}>{project.mainCategory}</span>
+          <p style={heroSummaryStyle}>
+            {getProjectHeroIntro(project)}
+          </p>
+          <p style={heroTechLineStyle}>
+            {project.technologies}
+          </p>
+          {(project.github || project.demo) && (
+            <div style={heroButtonRowStyle}>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noreferrer" style={{ ...externalLinkStyle, background: 'rgba(255,255,255,0.12)' }}>
+                  <i className="fa-brands fa-github" />
+                  <span>View Source</span>
+                </a>
+              )}
+              {project.demo && (
+                <a href={project.demo} target="_blank" rel="noreferrer" style={{ ...externalLinkStyle, background: 'rgba(255,255,255,0.06)' }}>
+                  <i className="fa-solid fa-arrow-up-right-from-square" />
+                  <span>Live Demo</span>
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="col-lg-6">
+        <div className="wow fadeInUp delay-0-3s" style={{ display: 'flex', justifyContent: 'center' }}>
+          <ProjectImageFrame
+            src={project.image}
+            alt={`${project.title} main visual`}
+            title="Project Visual"
+            subtitle="Add a project screenshot or hero image to replace this media area."
+            minHeight="520px"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+interface StorySection {
+  label: string
+  heading: string
+  text?: string
+  pills: string[]
+  image?: string
+}
+
+const ProjectStorySection = ({ section, index }: { section: StorySection; index: number }) => {
+  if (!section.text && section.pills.length === 0) {
+    return null
+  }
+
+  const imageColumn = (
+    <div className={`col-lg-7 ${index % 2 === 1 ? 'order-lg-1 order-2' : ''}`}>
+      <div className={`wow fadeInUp delay-0-${index + 3}s`}>
+        <ProjectImageFrame
+          src={section.image}
+          alt={section.heading}
+          title={`${section.label} Visual`}
+          subtitle="Add a project screenshot or media asset to replace this placeholder."
+          minHeight="460px"
+          objectFit="contain"
+        />
+      </div>
+    </div>
+  )
+
+  const textColumn = (
+    <div className={`col-lg-5 ${index % 2 === 1 ? 'order-lg-2 order-1' : ''}`}>
+      <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
+        <span style={eyebrowStyle}>{section.label}</span>
+        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>{section.heading}</h2>
+        {section.text && <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>{section.text}</p>}
+        {section.pills.length > 0 && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '28px' }}>
+            {section.pills.map((label) => (
+              <span key={label} style={tagPillStyle}>{label}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+
+  return (
+    <section style={sectionSpacing}>
+      <div style={pageShellStyle}>
+        <div className="row align-items-center gx-5 gy-5">
+          {index % 2 === 0 ? (
+            <>
+              {textColumn}
+              {imageColumn}
+            </>
+          ) : (
+            <>
+              {imageColumn}
+              {textColumn}
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const ProjectCaseStudy = ({ project, onImageClick }: { project: Project; onImageClick: (index: number) => void }) => {
+  const isResumeReviewer = project.slug === 'resume-reviewer-api'
+  const isSeoAutomation = project.slug === 'seo-automation'
+  const architectureImage = project.gallery[1] ?? project.gallery[0]
+  const storyImages = [project.gallery[0] ?? project.image, project.gallery[2], project.gallery[3], project.gallery[4], project.gallery[5]]
+  const demoImages = project.gallery
+    .map((image, index) => ({ image, index }))
+    .filter((item) => item.image !== architectureImage && !storyImages.includes(item.image))
+  const showMetrics = project.slug !== 'resume-reviewer-api' && project.metrics && project.metrics.length > 0
+  const storySections: StorySection[] = isSeoAutomation
+    ? [
+        {
+          label: 'SEO Input & Control',
+          heading: 'A simple control layer for the entire workflow.',
+          text: project.overview,
+          pills: ['Google Sheets', 'SEO Inputs', 'Workflow Trigger'],
+          image: project.gallery[0],
+        },
+        {
+          label: 'AI Content Pipeline',
+          heading: 'Automating the repetitive content workflow.',
+          text: project.problem,
+          pills: ['n8n', 'OpenAI', 'Cloudflare AI', 'API Integration'],
+          image: project.gallery[1],
+        },
+        {
+          label: 'WordPress Publishing',
+          heading: 'From generated content to a ready WordPress draft.',
+          text: project.solution,
+          pills: ['WordPress', 'Draft Creation', 'Content Automation'],
+          image: project.gallery[2],
+        },
+      ]
+    : [
+        {
+          label: isResumeReviewer ? 'Authentication & User Flow' : 'Project Introduction',
+          heading: isResumeReviewer ? 'Secure access from the first request.' : 'What this project is built to do.',
+          text: project.overview,
+          pills: project.stack.slice(0, 4),
+          image: storyImages[0],
+        },
+        {
+          label: isResumeReviewer ? 'Resume Input & Processing' : 'Problem',
+          heading: isResumeReviewer ? 'Preparing the resume for analysis.' : 'The engineering challenge.',
+          text: project.problem,
+          pills: project.challenges.slice(0, 4),
+          image: storyImages[1],
+        },
+        {
+          label: isResumeReviewer ? 'AI Analysis & Validation' : 'Solution',
+          heading: isResumeReviewer ? 'Turning resume data into structured feedback.' : 'The system approach.',
+          text: project.solution,
+          pills: project.features.slice(0, 4),
+          image: storyImages[2],
+        },
+        {
+          label: isResumeReviewer ? 'Backend API' : 'Technical Capabilities',
+          heading: isResumeReviewer ? 'More than a frontend AI demo.' : 'What the system supports.',
+          text: project.role ?? project.impact,
+          pills: project.features,
+          image: storyImages[3],
+        },
+        {
+          label: 'Engineering Challenges',
+          heading: 'Implementation constraints solved.',
+          text: project.impact ?? project.role,
+          pills: project.challenges,
+          image: storyImages[4],
+        },
+      ]
+
+  return (
+    <>
+      {project.architecture && (
+        <section style={{ ...sectionSpacing, paddingTop: 'clamp(35px, 4.8vw, 64px)' }}>
+          <div style={{ ...pageShellStyle, maxWidth: '1120px' }}>
+            <div className="wow fadeInUp delay-0-2s" style={{ marginBottom: '40px' }}>
+              <span style={sectionLabelStyle}>System Architecture</span>
+              <h2 style={{ color: '#fff', fontSize: caseStudyHeadingFontSize, fontWeight: 300, lineHeight: 1.08, margin: 0 }}>
+                {isSeoAutomation ? 'From SEO input to WordPress draft.' : 'How the pieces fit together.'}
+              </h2>
+            </div>
+            <ProjectImageFrame
+              src={architectureImage}
+              alt={`${project.title} architecture visual`}
+              title="Architecture Visual"
+              subtitle="Add an architecture diagram or product screenshot when available."
+              minHeight="520px"
+              objectFit="contain"
+            />
+            <p style={{ ...sectionCopyStyle, color: 'rgba(255,255,255,0.72)', marginTop: '24px', maxWidth: '760px' }}>
+              {project.architecture}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {storySections.map((section, index) => (
+        <ProjectStorySection key={section.label} section={section} index={index} />
+      ))}
+
+      {(project.results.length > 0 || showMetrics) && (
+        <section
+          style={{
+            ...sectionSpacing,
+            width: '100vw',
+            position: 'relative',
+            left: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw',
+            background: 'rgb(244,243,237)',
+          }}
+        >
+          <div style={pageShellStyle}>
+            {project.results.length > 0 && (
+              <>
+                <div className="wow fadeInUp delay-0-2s" style={{ marginBottom: '30px' }}>
+                  <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>Results</span>
+                  <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500, lineHeight: 1.1 }}>
+                    {isSeoAutomation ? 'A repeatable end-to-end publishing workflow.' : isResumeReviewer ? 'From prototype to deployed backend product.' : 'Outcome-focused project results.'}
+                  </h2>
+                </div>
+                <div className="row gx-5 gy-5">
+                  {project.results.map((item) => (
+                    <div key={item} className="col-12 col-md-6 col-lg-4">
+                      <div style={{ padding: '26px 0' }}>
+                        {!isResumeReviewer && (
+                          <span style={{ display: 'block', color: 'rgba(0,0,0,0.78)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>
+                            Result
+                          </span>
+                        )}
+                        <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {showMetrics && (
+              <>
+                <div style={{ borderTop: '1px solid #e5e7eb', margin: '40px 0 30px' }} />
+                <div className="wow fadeInUp delay-0-2s" style={{ margin: '0 0 28px' }}>
+                  <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>Metrics</span>
+                  <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500, lineHeight: 1.1 }}>
+                    Proof points from the build.
+                  </h2>
+                </div>
+                <div className="row gx-5 gy-4">
+                  {(project.metrics ?? []).map((item) => (
+                    <div key={item} className="col-12 col-md-6 col-lg-3">
+                      <span style={{ ...techChipStyle, display: 'inline-flex', marginRight: '10px', marginBottom: '10px' }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {project.stack.length > 0 && (
+              <>
+                <div style={{ borderTop: '1px solid #e5e7eb', margin: '40px 0 30px' }} />
+                <div className="wow fadeInUp delay-0-2s" style={{ margin: '0 0 28px' }}>
+                  <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>Tech Stack</span>
+                  <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500, lineHeight: 1.1 }}>
+                    Organized for engineering clarity.
+                  </h2>
+                </div>
+                <div className="row gx-5 gy-4">
+                  {project.stack.map((item) => (
+                    <div key={item} className="col-12 col-md-6 col-lg-3">
+                      <span style={{ ...techChipStyle, display: 'inline-flex', marginRight: '10px', marginBottom: '10px' }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </section>
+      )}
+
+      {demoImages.length > 0 && (
+        <section style={sectionSpacing}>
+          <div style={pageShellStyle}>
+            <SectionHeading label="Gallery / Demonstration" title="Visual project evidence." />
+            <div className="row g-4">
+              {demoImages.map(({ image, index }) => (
+                <div className="col-lg-6" key={image}>
+                  <a style={{ cursor: 'pointer' }} onClick={() => onImageClick(index)} className="work-popup">
+                    <ProjectImageFrame src={image} alt={`${project.title} gallery ${index + 1}`} title="Project Media" minHeight="320px" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  )
+}
 
 export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
   const [photoIndex, setPhotoIndex] = useState<number | null>(null)
@@ -337,73 +754,35 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
               <div className="row align-items-center g-4 g-lg-5" style={{ padding: '0 0 30px' }}>
                 <div className="col-lg-6">
                   <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '620px' }}>
-                    <a
-                      href="/projects"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        color: 'rgba(255,255,255,0.82)',
-                        fontSize: '13px',
-                        letterSpacing: '0.16em',
-                        textTransform: 'uppercase',
-                        textDecoration: 'none',
-                        marginBottom: '28px',
-                        transition: 'color 0.3s ease',
-                      }}
-                    >
-                      <i className="fa-solid fa-arrow-left" />
-                      <span>Back to Projects</span>
+                    <a href="/projects" style={backToProjectsStyle}>
+                      <span aria-hidden="true">←</span>
+                      <span>BACK TO PROJECTS</span>
                     </a>
 
-                    <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1.05rem', marginBottom: '24px', maxWidth: '600px', lineHeight: 1.75 }}>
-                      Delivero is an autonomous mobile robot designed to transport items without human intervention. It combines real-time perception, sensor fusion, autonomous navigation, and embedded control into a complete robotics platform.
+                    <span style={eyebrowStyle}>{project.mainCategory}</span>
+                    <p style={heroSummaryStyle}>
+                      {getProjectHeroIntro(project)}
+                    </p>
+                    <p style={heroTechLineStyle}>
+                      {project.technologies}
                     </p>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
-                      <a
-                        href={project.github ?? '#'}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '10px',
-                          padding: '14px 22px',
-                          borderRadius: '999px',
-                          background: 'rgba(255,255,255,0.12)',
-                          color: '#fff',
-                          textDecoration: 'none',
-                          border: '1px solid rgba(255,255,255,0.16)',
-                          transition: 'transform 0.3s ease, background 0.3s ease',
-                        }}
-                      >
-                        <i className="fa-brands fa-github" />
-                        <span>View Source</span>
-                      </a>
-                      <a
-                        href={project.demo ?? '#'}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '10px',
-                          padding: '14px 22px',
-                          borderRadius: '999px',
-                          background: 'rgba(255,255,255,0.06)',
-                          color: '#fff',
-                          textDecoration: 'none',
-                          border: '1px solid rgba(255,255,255,0.16)',
-                          transition: 'transform 0.3s ease, background 0.3s ease',
-                        }}
-                      >
-                        <i className="fa-solid fa-play" />
-                        <span>Watch Demo</span>
-                      </a>
-                    </div>
+                    {(project.github || project.demo) && (
+                      <div style={heroButtonRowStyle}>
+                        {project.github && (
+                          <a href={project.github} target="_blank" rel="noreferrer" style={{ ...externalLinkStyle, background: 'rgba(255,255,255,0.12)' }}>
+                            <i className="fa-brands fa-github" />
+                            <span>View Source</span>
+                          </a>
+                        )}
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noreferrer" style={{ ...externalLinkStyle, background: 'rgba(255,255,255,0.06)' }}>
+                            <i className="fa-solid fa-play" />
+                            <span>Watch Demo</span>
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -424,18 +803,18 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
               </div>
             </div>
           ) : (
-            <img src={project.image} alt={project.title} />
+            <ProjectCaseStudyHero project={project} />
           )}
         </div>
 
         <div style={pageShellStyle}>
           {isDelivero ? (
             <>
-              <section style={{ ...sectionSpacing, paddingTop: '64px' }}>
+              <section style={{ ...sectionSpacing, paddingTop: 'clamp(35px, 4.8vw, 64px)' }}>
                 <div style={{ ...pageShellStyle, maxWidth: '1120px' }}>
                   <div className="wow fadeInUp delay-0-2s" style={{ marginBottom: '40px' }}>
                     <span style={sectionLabelStyle}>SYSTEM ARCHITECTURE</span>
-                    <h2 style={{ color: '#fff', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 300, lineHeight: 1.05, margin: 0 }}>Platform topology, autonomy flow, and embedded control.</h2>
+                    <h2 style={{ color: '#fff', fontSize: caseStudyHeadingFontSize, fontWeight: 300, lineHeight: 1.08, margin: 0 }}>Platform topology, autonomy flow, and embedded control.</h2>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <div style={{ ...mediaFrameStyle, width: '100%', maxWidth: '1020px', minHeight: '520px' }}>
@@ -449,7 +828,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                       />
                     </div>
                   </div>
-                  <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '1rem', lineHeight: 1.8, marginTop: '24px', maxWidth: '760px' }}>
+                  <p style={{ ...sectionCopyStyle, color: 'rgba(255,255,255,0.72)', marginTop: '24px', maxWidth: '760px' }}>
                     The architecture integrates onboard perception, sensor fusion, ROS 2 navigation, and real-time embedded motor control into a unified autonomous platform.
                   </p>
                 </div>
@@ -461,7 +840,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-5">
                       <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
                         <span style={eyebrowStyle}>PERCEPTION / AI</span>
-                        <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2.2rem, 3vw, 2.8rem)' }}>What does the robot see?</h2>
+                        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>What does the robot see?</h2>
                         <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>
                           Delivero uses onboard vision and optimized inference to detect obstacles and relevant objects in real time.
                         </p>
@@ -506,7 +885,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-5">
                       <div className="wow fadeInUp delay-0-3s" style={{ maxWidth: '520px' }}>
                         <span style={eyebrowStyle}>LOCALIZATION & SENSOR FUSION</span>
-                        <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2.2rem, 3vw, 2.8rem)' }}>Where is the robot?</h2>
+                        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>Where is the robot?</h2>
                         <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>
                           LiDAR, IMU, and wheel odometry are fused to estimate the robot's pose for stable autonomous navigation.
                         </p>
@@ -527,7 +906,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-5">
                       <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
                         <span style={eyebrowStyle}>AUTONOMOUS NAVIGATION</span>
-                        <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2.2rem, 3vw, 2.8rem)' }}>How does the robot reach its goal safely?</h2>
+                        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>How does the robot reach its goal safely?</h2>
                         <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>
                           ROS 2 Nav2 handles global planning, local control, obstacle avoidance, and recovery behaviors to execute autonomous delivery routes.
                         </p>
@@ -560,7 +939,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-7">
                       <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
                         <span style={eyebrowStyle}>SAFETY & EMERGENCY</span>
-                        <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2.2rem, 3vw, 2.8rem)' }}>Fail-safe behavior for unexpected conditions.</h2>
+                        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>Fail-safe behavior for unexpected conditions.</h2>
                         <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>
                           An independent ESP32-S3 safety layer takes over when communication with the Raspberry Pi is lost, power or system faults occur, or the main autonomy stack becomes unresponsive. Using ToF sensing and wheel feedback, the robot performs a controlled maneuver toward the nearest available safe area away from the travel path.
                         </p>
@@ -607,7 +986,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-5 order-lg-2 order-1">
                       <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
                         <span style={eyebrowStyle}>SIMULATION → VALIDATION → REAL ROBOT</span>
-                        <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2.2rem, 3vw, 2.8rem)' }}>From virtual testing to physical deployment.</h2>
+                        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>From virtual testing to physical deployment.</h2>
                         <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>
                           Behaviors were developed and validated in Gazebo before deployment and testing on the physical robot.
                         </p>
@@ -643,7 +1022,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     <div className="col-lg-5 order-lg-2 order-1">
                       <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
                         <span style={eyebrowStyle}>IOT & REMOTE MONITORING</span>
-                        <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2.2rem, 3vw, 2.8rem)' }}>Remote monitoring of the robot in operation.</h2>
+                        <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>Remote monitoring of the robot in operation.</h2>
                         <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>
                           An IoT-connected web dashboard provides remote access to the robot's GPS location, telemetry, fault information, and runtime status.
                         </p>
@@ -671,8 +1050,8 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
               >
                 <div style={pageShellStyle}>
                   <div className="wow fadeInUp delay-0-2s" style={{ marginBottom: '30px' }}>
-                    <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>SYSTEM PERFORMANCE</span>
-                    <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2rem, 2.8vw, 2.4rem)', color: '#111', fontWeight: 500, letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+                    <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>SYSTEM PERFORMANCE</span>
+                    <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500, letterSpacing: '-0.03em', lineHeight: 1.1 }}>
                       Representative prototype performance.
                     </h2>
                   </div>
@@ -680,7 +1059,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                     {performanceMetrics.map((item) => (
                       <div key={item.title} className="col-12 col-md-6 col-lg-4">
                         <div style={{ padding: '26px 0' }}>
-                          <span style={{ display: 'block', color: 'rgba(0,0,0,0.78)', fontSize: '0.88rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>
+                          <span style={{ display: 'block', color: 'rgba(0,0,0,0.78)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>
                             {item.title}
                           </span>
                           <h3 style={{ color: '#111', fontSize: '1.75rem', margin: 0, lineHeight: 1.12, fontWeight: 700 }}>
@@ -694,8 +1073,8 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
                   <div style={{ borderTop: '1px solid #e5e7eb', margin: '40px 0 30px' }} />
                   <div style={{ height: '12px' }} />
                   <div className="wow fadeInUp delay-0-2s" style={{ margin: '0 0 28px' }}>
-                    <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>TECH STACK</span>
-                    <h2 style={{ ...sectionHeadingStyle, fontSize: 'clamp(2rem, 2.8vw, 2.4rem)', color: '#111', fontWeight: 500, letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+                    <span style={{ color: 'rgba(0,0,0,0.88)', fontSize: 'clamp(0.75rem, 0.8vw, 0.875rem)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>TECH STACK</span>
+                    <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500, letterSpacing: '-0.03em', lineHeight: 1.1 }}>
                       Organized for engineering clarity.
                     </h2>
                   </div>
@@ -721,158 +1100,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
               </section>
             </>
           ) : (
-            <>
-              <div className="row">
-                <div className="col-lg-4">
-                  <div className="single-project-page-left wow fadeInUp delay-0-2s">
-                    <div className="single-info">
-                      <p>Category</p>
-                      <h3>{project.mainCategory}</h3>
-                    </div>
-                    <div className="single-info">
-                      <p>Focus</p>
-                      <h3>{project.categories[0]}</h3>
-                    </div>
-                    <div className="single-info">
-                      <p>Stack</p>
-                      <h3>{project.stack[0]}</h3>
-                    </div>
-                    <div className="single-info">
-                      <p>Project</p>
-                      <h3>{project.title}</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-8">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s">
-                    <h2>Description</h2>
-                    <p>{project.overview}</p>
-                    <p>{project.solution}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-60">
-                <div className="col-lg-12">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Overview</h2>
-                    <p>{project.overview}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-6">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Problem</h2>
-                    <p>{project.problem}</p>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Solution</h2>
-                    <p>{project.solution}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-12">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Architecture</h2>
-                    <p>{project.architecture}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-6">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Technical Stack</h2>
-                    <ul>
-                      {project.stack.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Features</h2>
-                    <ul>
-                      {project.features.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-6">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Engineering Challenges</h2>
-                    <ul>
-                      {project.challenges.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Results</h2>
-                    <ul>
-                      {project.results.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-12">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Gallery</h2>
-                    <div className="row g-4">
-                      {project.gallery.map((image, index) => (
-                        <div className="col-lg-6" key={image}>
-                          <a style={{ cursor: 'pointer' }} onClick={() => handleImagePopup(index)} className="work-popup">
-                            <div className="single-image wow fadeInUp delay-0-2s">
-                              <img src={image} alt={`${project.title} gallery ${index + 1}`} style={{ width: '100%', height: 'auto' }} />
-                            </div>
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-12">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ marginBottom: '40px' }}>
-                    <h2>Links</h2>
-                    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                      {project.github && <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>}
-                      {project.demo && <a href={project.demo} target="_blank" rel="noreferrer">Demo</a>}
-                      {project.documentation && <a href={project.documentation} target="_blank" rel="noreferrer">Documentation</a>}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row pt-20">
-                <div className="col-lg-12">
-                  <div className="single-project-page-right wow fadeInUp delay-0-4s">
-                    <h2>Lessons Learned</h2>
-                    <p>{project.results[0]}</p>
-                  </div>
-                </div>
-              </div>
-            </>
+            <ProjectCaseStudy project={project} onImageClick={handleImagePopup} />
           )}
         </div>
       </div>

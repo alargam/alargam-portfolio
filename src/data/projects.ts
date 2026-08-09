@@ -1,9 +1,17 @@
+import resumeReviewerCover from '@/assets/images/resume-reviewer/resume-reviewer-cover.png'
+import resumeReviewerLogin from '@/assets/images/resume-reviewer/after_login.png'
+import resumeReviewerUpload from '@/assets/images/resume-reviewer/after_upload_cv_and_job_description.png'
+import resumeReviewerAnalysis from '@/assets/images/resume-reviewer/your_analysis.png'
+import resumeReviewerArchitecture from '@/assets/images/resume-reviewer/architecture.png'
+import resumeReviewerApi from '@/assets/images/resume-reviewer/api.png'
+
 export interface Project {
   id: number
   slug: string
   aliases?: string[]
   title: string
   description: string
+  tagline?: string
   image: string
   mainCategory: string
   categories: string[]
@@ -23,6 +31,7 @@ export interface Project {
   role?: string
   impact?: string
   metrics?: string[]
+  hidden?: boolean
 }
 
 export const projects: Project[] = [
@@ -32,6 +41,7 @@ export const projects: Project[] = [
     aliases: ['delivero-amr'],
     title: 'Delivero',
     description: 'Autonomous mobile robot for intelligent delivery and navigation.',
+    tagline: 'Redefining autonomous delivery for the next generation of smart cities.',
     image: '/assets/images/amr/amr-hero.png',
     mainCategory: 'Robotics',
     categories: ['Robotics'],
@@ -73,50 +83,53 @@ export const projects: Project[] = [
     github: 'https://github.com',
     demo: 'https://example.com',
     documentation: 'https://example.com/docs',
+    hidden: true,
   },
   {
     id: 4,
     slug: 'seo-automation',
     title: 'AI SEO & WordPress Automation',
-    description: 'AI-powered workflow automation system for SEO optimization and WordPress publishing.',
-    image: '/assets/images/projects/seo-automation.png',
+    description: 'AI-powered content automation pipeline that turns structured SEO inputs into generated WordPress drafts.',
+    tagline: 'Turning SEO inputs into AI-generated WordPress drafts through one automated workflow.',
+    image: '/assets/images/n8n-seo/n8n-seo-cover.png',
     mainCategory: 'Automation',
     categories: ['Automation'],
-    technologies: 'AI Automation • API Integration • Intelligent Workflows',
-    overview: 'An automation platform for SEO and WordPress content operations that uses AI to accelerate publishing and optimization tasks.',
-    problem: 'The workflow needed to reduce repetitive SEO work and simplify publishing without sacrificing content quality and consistency.',
-    solution: 'I designed a workflow automation layer that connects content generation, SEO analysis, publishing, and monitoring into one repeatable process.',
-    architecture: 'The platform is built around API integrations, workflow orchestration, and AI-driven content analysis services.',
-    stack: ['Python', 'FastAPI', 'WordPress', 'OpenAI', 'PostgreSQL', 'Docker'],
-    features: ['SEO automation', 'Content publishing', 'API orchestration', 'Performance reporting'],
-    challenges: ['Content consistency', 'API reliability', 'Publishing speed'],
-    results: ['Higher publishing velocity', 'Less manual effort', 'More reliable SEO workflows'],
-    gallery: ['/assets/images/projects/seo-automation.png'],
-    github: 'https://github.com',
-    demo: 'https://example.com',
-    documentation: 'https://example.com/docs',
+    technologies: 'n8n • Google Sheets • OpenAI • Cloudflare AI • WordPress',
+    overview: 'Google Sheets acts as the workflow entry point, providing structured keywords, topics, and content inputs that trigger and control the automation pipeline.',
+    problem: 'n8n coordinates the processing steps, sends structured context to AI services, handles generated content, and passes the resulting data through the workflow without requiring manual handoffs between tools.',
+    solution: 'The completed article is automatically formatted and sent to WordPress as a draft, allowing it to be reviewed and edited before publishing.',
+    architecture: 'The workflow connects Google Sheets, AI services, and WordPress through n8n, orchestrating the full content production process from structured input to a ready-to-review article draft.',
+    stack: ['n8n', 'Google Sheets', 'OpenAI', 'Cloudflare AI', 'WordPress', 'REST APIs'],
+    features: ['Google Sheets', 'SEO Inputs', 'Workflow Trigger', 'n8n', 'OpenAI', 'Cloudflare AI', 'API Integration', 'WordPress', 'Draft Creation', 'Content Automation'],
+    challenges: [],
+    results: ['Automated SEO content workflow', 'Google Sheets-based workflow control', 'AI-assisted article generation', 'Automated WordPress draft creation', 'Reduced repetitive manual content operations'],
+    gallery: ['/assets/images/n8n-seo/n8n-google-sheets-control.png', '/assets/images/n8n-seo/n8n-workflow-overview.png', '/assets/images/n8n-seo/n8n-wordpress-draft.png'],
   },
   {
     id: 5,
     slug: 'resume-reviewer-api',
-    title: 'Resume Reviewer API',
-    description: 'Production-ready backend API that analyzes resumes and provides AI-powered feedback.',
-    image: '/assets/images/projects/resume-reviewer.png',
+    title: 'AI Resume Reviewer',
+    description: 'Production-oriented AI backend for analyzing resumes against job descriptions.',
+    tagline: 'Production-ready AI resume analysis from upload to structured feedback.',
+    image: resumeReviewerCover.src,
     mainCategory: 'AI & Backend',
     categories: ['AI & Backend'],
-    technologies: 'Backend Systems • APIs • AI Integration',
-    overview: 'A production-ready backend API that evaluates candidate resumes and provides structured AI feedback for hiring workflows.',
-    problem: 'The challenge was to turn raw resume data into actionable, consistent feedback while keeping the service reliable and easy to integrate.',
-    solution: 'I implemented a robust API service with async processing, validation, and AI-based analysis so the system could support real-world hiring use cases.',
-    architecture: 'The service uses a layered backend architecture with API endpoints, data persistence, analysis workers, and integration hooks.',
-    stack: ['Python', 'FastAPI', 'PostgreSQL', 'OpenAI', 'Docker', 'Redis'],
-    features: ['Resume scoring', 'Feedback generation', 'Integration endpoints', 'Auditability'],
-    challenges: ['Reliable parsing', 'Prompt quality', 'Scalable processing'],
-    results: ['Faster review cycles', 'Consistent evaluations', 'Deployment-ready API'],
-    gallery: ['/assets/images/projects/resume-reviewer.png'],
-    github: 'https://github.com',
-    demo: 'https://example.com',
-    documentation: 'https://example.com/docs',
+    technologies: 'FastAPI • PostgreSQL • Groq LLM • JWT • Docker • Railway',
+    overview: 'Users register or log in with securely hashed credentials, receive a JWT access token, and can access only their own resume analyses and saved review history.',
+    problem: 'The API validates the uploaded PDF, extracts resume text with PyMuPDF, and combines it with the target job description before the data reaches the AI layer.',
+    solution: 'Groq generates overall and matching scores, strengths, missing skills, weaknesses, and recommendations. The response is parsed and validated with Pydantic before it can be returned or persisted.',
+    architecture: 'From authenticated PDF upload to structured AI analysis, PostgreSQL persistence, and user-owned review history.',
+    stack: ['Python', 'FastAPI', 'Pydantic', 'PostgreSQL', 'SQLAlchemy 2.x', 'Alembic', 'psycopg v3', 'Groq LLM API', 'PyMuPDF', 'JWT / PyJWT', 'Argon2 via pwdlib', 'Docker', 'Docker Compose', 'Railway'],
+    features: ['Groq LLM', 'Pydantic', 'Structured Output', 'FastAPI', 'REST API', 'OpenAPI', 'PostgreSQL'],
+    challenges: [],
+    results: ['40 automated tests passing', 'Public Railway deployment', 'Persistent PostgreSQL review history', 'Authenticated user-owned review access', 'Complete end-to-end resume analysis workflow'],
+    gallery: [resumeReviewerLogin.src, resumeReviewerArchitecture.src, resumeReviewerUpload.src, resumeReviewerAnalysis.src, resumeReviewerApi.src],
+    github: 'https://github.com/alargam/resume-reviewer-api',
+    demo: 'https://carefree-celebration-production-a424.up.railway.app/',
+    documentation: 'https://github.com/alargam/resume-reviewer-api',
+    role: 'The interface is backed by a FastAPI REST API with authentication, controlled error handling, PostgreSQL persistence, review ownership, and documented endpoints.',
+    impact: '',
+    metrics: []
   },
   {
     id: 6,
@@ -139,14 +152,17 @@ export const projects: Project[] = [
     github: 'https://github.com',
     demo: 'https://example.com',
     documentation: 'https://example.com/docs',
+    hidden: true,
   },
 ]
+
+export const publicProjects = projects.filter((project) => !project.hidden)
 
 export const allCategories = ['AI & Backend', 'Robotics', 'Automation']
 
 export const getFilteredProjects = (category: string | null): Project[] => {
   if (!category) {
-    return projects
+    return publicProjects
   }
-  return projects.filter((project) => project.categories.includes(category))
+  return publicProjects.filter((project) => project.categories.includes(category))
 }

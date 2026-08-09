@@ -67,8 +67,8 @@ body {
     color: #E6EAEE;
     background: var(--body-background);
     font-weight: 400;
-    line-height: 30px;
-    font-size: 16px;
+    line-height: 1.65;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
 
@@ -94,18 +94,20 @@ h6,
 
 h1,
 .h1 {
-    font-size: 58px;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    line-height: 1.06;
 }
 
 h2,
 .h2 {
-    font-size: 22px;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    line-height: 1.1;
 }
 
 h3,
 .h3 {
-    line-height: 1.3;
-    font-size: 30px;
+    line-height: 1.2;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
 }
 
 h4,
@@ -396,14 +398,15 @@ html {
 
 .section-title h2 {
     margin-bottom: 15px;
-    font-size: 60px;
-    line-height: 70px;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    line-height: 1.08;
     text-transform: uppercase;
     padding-bottom: 20px;
 }
 
 .section-title p {
-    font-size: 16px;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    line-height: 1.6;
     text-transform: uppercase;
 }
 
@@ -777,20 +780,43 @@ html {
 }
 
 .single-page-hero-area h2 {
-    margin-bottom: 15px;
-    font-size: 150px;
+    margin-bottom: 0;
+    font-size: clamp(2.125rem, 7vw, 4.75rem);
+    line-height: 1.03;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    padding-bottom: 14px;
     text-align: center;
     color: var(--main-color);
+    overflow-wrap: anywhere;
 }
 
 .single-page-hero-area p {
     padding: 0px 200px;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.65;
     text-align: center;
     color: var(--main-color);
+}
+
+.single-page-hero-area .single-page-hero-subtitle {
+    padding: 0;
+    margin: 0 auto 16px;
+    max-width: 860px;
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.45;
+    color: rgba(7, 7, 7, 0.9);
+}
+
+.single-page-hero-area .single-page-hero-tagline {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 920px;
+    font-size: clamp(0.875rem, 1.2vw, 1.125rem);
+    letter-spacing: 0.01em;
+    color: rgba(7, 7, 7, 0.68);
+    line-height: 1.5;
 }
 
 
@@ -1266,10 +1292,12 @@ html {
 .hero-content h1,
 .hero-content h2 {
     font-weight: 500;
-    font-size: 205px;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    line-height: 1.02;
     text-transform: uppercase;
     text-align: center;
     color: var(--main-color);
+    overflow-wrap: anywhere;
 }
 
 .hero-content p {
@@ -1288,9 +1316,9 @@ html {
 }
 
 .main-hero-area .hero-title {
-    font-size: clamp(52px, 8.6vw, 130px);
-    line-height: 1;
-    white-space: nowrap;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    line-height: 1.02;
+    white-space: normal;
 }
 
 .main-hero-area .hero-subtitle {
@@ -1309,7 +1337,7 @@ html {
 }
 
 .hero-details > p {
-    font-size: 19px;
+    font-size: clamp(1rem, 1.2vw, 1.1875rem);
     line-height: 1.65;
 }
 
@@ -1412,7 +1440,7 @@ html {
     font-weight: 700;
     color: var(--primary-color);
     text-align: center;
-    font-size: 50px;
+    font-size: clamp(2rem, 4vw, 3.125rem);
 
 }
 
@@ -1569,8 +1597,8 @@ html {
 }
 
 .about-content-part h2 {
-    font-size: 55px;
-    line-height: 72px;
+    font-size: clamp(1.8rem, 3.8vw, 3.45rem);
+    line-height: 1.15;
     margin-bottom: 20px;
 }
 
@@ -1664,10 +1692,10 @@ html {
 }
 
 .about-counter-part h2 {
-    font-size: 80px;
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 500;
     line-height: 1;
-    letter-spacing: -2.4px;
+    letter-spacing: -0.03em;
     color: var(--black-color);
     margin-bottom: 15px;
 }
@@ -1746,7 +1774,7 @@ h2.about-pre-title {
 
 .service-item h4 {
     color: var(--main-color);
-    font-size: 30px;
+    font-size: clamp(1.4rem, 2.5vw, 1.875rem);
     text-transform: uppercase;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -1881,7 +1909,7 @@ ul.extra-skills li i {
 
 .resume-box h2 {
     color: var(--main-color);
-    font-size: 30px;
+    font-size: clamp(1.4rem, 2.5vw, 1.875rem);
     text-transform: uppercase;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -2175,7 +2203,7 @@ ul.extra-skills li i {
 }
 
 .single-project-page-design {
-    padding-top: 30px;
+    padding-top: 24px;
 }
 
 .single-project-image img {
@@ -2258,7 +2286,7 @@ ul.extra-skills li i {
 .testimonial-item .testi-des h5 {
     margin-bottom: 0;
     color: var(--main-color);
-    font-size: 30px;
+    font-size: clamp(1.4rem, 2.5vw, 1.875rem);
     text-transform: uppercase;
     margin-top: 20px;
 }
@@ -2649,11 +2677,12 @@ p.copy-right-text {
 
 .footer-top h2 {
     color: var(--main-color);
-    font-size: 180px;
-    line-height: 1em;
+    font-size: clamp(2.25rem, 6vw, 5.5rem);
+    line-height: 1.02;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    overflow-wrap: anywhere;
 }
 
 .footer-top{

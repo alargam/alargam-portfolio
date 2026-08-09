@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Project } from '@/data/projects'
 
@@ -7,8 +7,45 @@ interface ProjectCardProps {
   index: number
 }
 
+const ProjectVisualFallback = ({ project }: { project: Project }) => (
+  <div
+    style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '32px',
+      textAlign: 'center',
+      background: 'linear-gradient(135deg, #050505 0%, #151515 54%, #0a0a0a 100%)',
+    }}
+  >
+    <div>
+      <span
+        style={{
+          display: 'inline-block',
+          marginBottom: '18px',
+          padding: '6px 12px',
+          border: '1px solid rgba(255,255,255,0.22)',
+          borderRadius: '999px',
+          color: 'rgba(255,255,255,0.72)',
+          fontSize: '12px',
+          fontWeight: 600,
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+        }}
+      >
+        {project.mainCategory}
+      </span>
+      <h4 style={{ color: '#fff', fontSize: '28px', lineHeight: 1.15, margin: 0, textTransform: 'uppercase' }}>{project.title}</h4>
+    </div>
+  </div>
+)
+
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const [imageFailed, setImageFailed] = useState(false)
   const delayClass = `delay-${(index + 1) * 2}s`
+  const hasProjectImage = Boolean(project.image) && !imageFailed
 
   return (
     <div className={`col-lg-6 col-md-12 wow fadeInUp ${delayClass}`} style={{ marginBottom: '30px' }}>
@@ -46,19 +83,24 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             position: 'relative',
           }}
         >
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes="(max-width: 991px) 100vw, 50vw"
-            style={{
-              objectFit: 'cover',
-              transition: 'transform 0.5s ease',
-            }}
-            onLoadingComplete={(img) => {
-              img.style.transform = 'scale(1)'
-            }}
-          />
+          {hasProjectImage ? (
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              sizes="(max-width: 991px) 100vw, 50vw"
+              style={{
+                objectFit: 'cover',
+                transition: 'transform 0.5s ease',
+              }}
+              onError={() => setImageFailed(true)}
+              onLoadingComplete={(img) => {
+                img.style.transform = 'scale(1)'
+              }}
+            />
+          ) : (
+            <ProjectVisualFallback project={project} />
+          )}
         </div>
 
         {/* Content */}

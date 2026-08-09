@@ -10,7 +10,7 @@ export default function ServiceArea() {
             <div className="col-xl-12 col-lg-12">
               <div className="section-title section-black-title wow fadeInUp delay-0-2s">
                 <h2 style={{ color: '#000' }}>What I Build</h2>
-                <p style={{ color: '#000' }}>I help transform ideas into production-ready products by designing and building complete AI, backend, automation, and robotics solutions from concept to deployment.</p>
+                <p style={{ color: '#000' }}>I build end-to-end engineering systems across AI, backend software, automation, and robotics — from architecture and implementation to integration and deployment.</p>
               </div>
             </div>
           </div>
@@ -21,7 +21,7 @@ export default function ServiceArea() {
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>01</h5>
                 <h4>AI Systems</h4>
-                <p>Building intelligent AI applications that turn data into practical solutions using modern AI technologies, from intelligent assistants to computer vision systems.</p>
+                <p>Building LLM-powered applications, machine learning systems, and computer vision solutions with a focus on practical integration and reliable outputs.</p>
               </div>
             </div>
 
@@ -31,7 +31,7 @@ export default function ServiceArea() {
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>02</h5>
                 <h4>Backend Engineering</h4>
-                <p>Designing secure and scalable backend systems, APIs, and databases that power reliable applications and support long-term growth.</p>
+                <p>Building APIs, authentication systems, databases, and backend services that provide the software foundation for AI-powered products.</p>
               </div>
             </div>
 
@@ -41,7 +41,7 @@ export default function ServiceArea() {
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>03</h5>
                 <h4>Intelligent Automation</h4>
-                <p>Creating end-to-end automation workflows that connect business systems, reduce manual work, and improve operational efficiency with AI.</p>
+                <p>Designing automated workflows that connect APIs, AI services, business tools, and content systems to replace repetitive manual processes.</p>
               </div>
             </div>
 
@@ -51,7 +51,7 @@ export default function ServiceArea() {
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>04</h5>
                 <h4>Robotics & Computer Vision</h4>
-                <p>Developing autonomous robotics software with perception, simulation, and computer vision to solve real-world engineering challenges.</p>
+                <p>Developing perception, navigation, simulation, and control software for autonomous robotic systems using computer vision and robotics frameworks.</p>
               </div>
             </div>
 

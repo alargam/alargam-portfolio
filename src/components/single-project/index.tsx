@@ -10,7 +10,8 @@ interface SingleProjectProps {
 }
 
 export default function SingleProject({ project }: SingleProjectProps) {
-  const deliveroIntro = project.slug === 'delivero'
+  const projectTagline = project.tagline ?? project.description
+
   return (
     <>
       <HeaderOne />
@@ -20,8 +21,7 @@ export default function SingleProject({ project }: SingleProjectProps) {
             <Breadcrumb
               title={project.title}
               style_3={true}
-              subtitle={deliveroIntro ? 'Autonomous Mobile Delivery Robot' : undefined}
-              tagline={deliveroIntro ? 'Redefining autonomous delivery for the next generation of smart cities.' : undefined}
+              tagline={projectTagline}
             />
             <SingleProjectArea project={project} />
           </main>
