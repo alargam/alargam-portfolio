@@ -289,6 +289,8 @@ const ProjectImageFrame = ({
   subtitle,
   minHeight = '460px',
   objectFit = 'cover',
+  preserveAspectRatio = false,
+  onImageClick,
 }: {
   src?: string
   alt: string
@@ -296,6 +298,8 @@ const ProjectImageFrame = ({
   subtitle?: string
   minHeight?: string
   objectFit?: 'cover' | 'contain'
+  preserveAspectRatio?: boolean
+  onImageClick?: () => void
 }) => {
   const [imageFailed, setImageFailed] = useState(false)
 
@@ -304,18 +308,30 @@ const ProjectImageFrame = ({
   }
 
   return (
-    <div style={{ ...mediaFrameStyle, minHeight }}>
+    <div
+      style={{ ...mediaFrameStyle, minHeight: preserveAspectRatio ? 0 : minHeight, ...(onImageClick ? { cursor: 'zoom-in' } : {}) }}
+      role={onImageClick ? 'button' : undefined}
+      tabIndex={onImageClick ? 0 : undefined}
+      aria-label={onImageClick ? `Enlarge ${alt}` : undefined}
+      onClick={onImageClick}
+      onKeyDown={onImageClick ? (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          onImageClick()
+        }
+      } : undefined}
+    >
       <img
         src={src}
         alt={alt}
         onError={() => setImageFailed(true)}
-        style={{ width: '100%', height: '100%', minHeight, objectFit, display: 'block' }}
+        style={{ width: '100%', height: preserveAspectRatio ? 'auto' : '100%', minHeight: preserveAspectRatio ? 0 : minHeight, objectFit, display: 'block' }}
       />
     </div>
   )
 }
 
-const ProjectCaseStudyHero = ({ project }: { project: Project }) => (
+const ProjectCaseStudyHero = ({ project, onImageClick }: { project: Project; onImageClick?: () => void }) => (
   <div className="container" style={{ maxWidth: '1200px', width: '100%' }}>
     <div className="row align-items-center g-4 g-lg-5" style={{ padding: '0 0 24px' }}>
       <div className="col-lg-6">
@@ -328,9 +344,9 @@ const ProjectCaseStudyHero = ({ project }: { project: Project }) => (
           <p style={heroSummaryStyle}>
             {getProjectHeroIntro(project)}
           </p>
-          <p style={heroTechLineStyle}>
-            {project.technologies}
-          </p>
+          {!['ai-real-estate-crm', 'ai-ecommerce-content', 'xray-super-resolution', 'n8n-ai-agents'].includes(project.slug) && (
+            <p style={heroTechLineStyle}>{project.technologies}</p>
+          )}
           {(project.github || project.demo) && (
             <div style={heroButtonRowStyle}>
               {project.github && (
@@ -357,6 +373,9 @@ const ProjectCaseStudyHero = ({ project }: { project: Project }) => (
             title="Project Visual"
             subtitle="Add a project screenshot or hero image to replace this media area."
             minHeight="520px"
+            preserveAspectRatio={['ai-cv-builder', 'ai-clinic-booking', 'ai-real-estate-crm', 'n8n-ai-agents', 'xray-super-resolution', 'ai-ecommerce-content'].includes(project.slug)}
+            objectFit={['ai-cv-builder', 'ai-clinic-booking', 'ai-real-estate-crm', 'n8n-ai-agents', 'xray-super-resolution', 'ai-ecommerce-content'].includes(project.slug) ? 'contain' : 'cover'}
+            onImageClick={onImageClick}
           />
         </div>
       </div>
@@ -372,12 +391,13 @@ interface StorySection {
   image?: string
 }
 
-const ProjectStorySection = ({ section, index }: { section: StorySection; index: number }) => {
+const ProjectStorySection = ({ section, index, preserveAspectRatio = false, compact = false, onImageClick }: { section: StorySection; index: number; preserveAspectRatio?: boolean; compact?: boolean; onImageClick?: () => void }) => {
   if (!section.text && section.pills.length === 0) {
     return null
   }
 
-  const imageColumn = (
+  const hasImage = !preserveAspectRatio || Boolean(section.image)
+  const imageColumn = hasImage ? (
     <div className={`col-lg-7 ${index % 2 === 1 ? 'order-lg-1 order-2' : ''}`}>
       <div className={`wow fadeInUp delay-0-${index + 3}s`}>
         <ProjectImageFrame
@@ -387,17 +407,19 @@ const ProjectStorySection = ({ section, index }: { section: StorySection; index:
           subtitle="Add a project screenshot or media asset to replace this placeholder."
           minHeight="460px"
           objectFit="contain"
+          preserveAspectRatio={preserveAspectRatio}
+          onImageClick={onImageClick}
         />
       </div>
     </div>
-  )
+  ) : null
 
   const textColumn = (
-    <div className={`col-lg-5 ${index % 2 === 1 ? 'order-lg-2 order-1' : ''}`}>
+    <div className={`${hasImage ? 'col-lg-5' : 'col-12'} ${hasImage && index % 2 === 1 ? 'order-lg-2 order-1' : ''}`}>
       <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
         <span style={eyebrowStyle}>{section.label}</span>
         <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>{section.heading}</h2>
-        {section.text && <p style={{ ...sectionCopyStyle, marginTop: '24px' }}>{section.text}</p>}
+        {section.text && <p style={{ ...sectionCopyStyle, marginTop: compact ? '16px' : '24px', ...(compact ? { marginBottom: 0 } : {}) }}>{section.text}</p>}
         {section.pills.length > 0 && (
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '28px' }}>
             {section.pills.map((label) => (
@@ -410,7 +432,7 @@ const ProjectStorySection = ({ section, index }: { section: StorySection; index:
   )
 
   return (
-    <section style={sectionSpacing}>
+    <section style={compact ? { paddingTop: hasImage ? 'clamp(24px, 3vw, 40px)' : '20px', paddingBottom: hasImage ? 'clamp(24px, 3vw, 40px)' : '20px' } : sectionSpacing}>
       <div style={pageShellStyle}>
         <div className="row align-items-center gx-5 gy-5">
           {index % 2 === 0 ? (
@@ -431,6 +453,292 @@ const ProjectStorySection = ({ section, index }: { section: StorySection; index:
 }
 
 const ProjectCaseStudy = ({ project, onImageClick }: { project: Project; onImageClick: (index: number) => void }) => {
+  if (project.slug === 'ai-ecommerce-content') {
+    const sections: StorySection[] = [
+      { label: 'Product Content', heading: 'Turn product imports into useful content.', text: project.overview, pills: [] },
+      { label: 'Publishing & Data', heading: 'Connect publishing, files, and product data.', text: `${project.solution} ${project.architecture}`, pills: [], image: project.gallery[0] },
+    ]
+
+    return (
+      <>
+        {sections.map((section, index) => (
+          <ProjectStorySection key={section.label} section={section} index={index} preserveAspectRatio compact onImageClick={section.image ? () => onImageClick(project.gallery.indexOf(section.image!) + 1) : undefined} />
+        ))}
+        <section style={{ padding: '40px 0', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw', background: 'rgb(244,243,237)' }}>
+          <div style={pageShellStyle}>
+            <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Results</span>
+            <div className="row gx-5 gy-4">
+              {project.results.map((item) => (
+                <div key={item} className="col-12 col-md-6">
+                  <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: '28px' }}>
+              <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Technologies</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {project.stack.map((item) => <span key={item} style={techChipStyle}>{item}</span>)}
+              </div>
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  if (project.slug === 'xray-super-resolution') {
+    const comparison = [
+      { label: 'LR Input', size: '256×256', image: project.gallery[0] },
+      { label: 'SR Output', size: '1024×1024', image: project.gallery[1] },
+      { label: 'HR Reference', size: '1024×1024', image: project.gallery[2] },
+    ]
+
+    return (
+      <>
+        <section style={{ padding: 'clamp(24px, 3vw, 40px) 0' }}>
+          <div style={pageShellStyle}>
+            <div className="row align-items-center gx-5 gy-4">
+              <div className="col-lg-4">
+                <span style={eyebrowStyle}>Dataset & Comparison</span>
+                <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>From low-resolution input to 4× output.</h2>
+                <p style={{ ...sectionCopyStyle, marginTop: '16px', marginBottom: 0 }}>{project.overview}</p>
+              </div>
+              <div className="col-lg-8">
+                <div className="row g-3">
+                  {comparison.map((item, index) => (
+                    <div key={item.label} className="col-4">
+                      <figure style={{ margin: 0 }}>
+                        <figcaption style={{ ...sectionCopyStyle, marginBottom: '12px' }}>
+                          <strong style={{ display: 'block' }}>{item.label}</strong>{item.size}
+                        </figcaption>
+                        <ProjectImageFrame src={item.image} alt={`${item.label} — ${item.size}`} title={item.label} preserveAspectRatio objectFit="contain" onImageClick={() => onImageClick(index + 1)} />
+                      </figure>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <ProjectStorySection section={{ label: 'Training & Architecture', heading: 'Train the generator and discriminator.', text: project.architecture, pills: [], image: project.gallery[3] }} index={1} preserveAspectRatio compact onImageClick={() => onImageClick(4)} />
+        <section style={{ padding: '40px 0', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw', background: 'rgb(244,243,237)' }}>
+          <div style={pageShellStyle}>
+            <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Experimental Results</span>
+            <p style={{ color: '#111', lineHeight: 1.6, marginBottom: '20px' }}>The README reports these evaluation results after 7 epochs on a Colab T4.</p>
+            <div className="row gx-5 gy-4">
+              {project.results.map((item) => (
+                <div key={item} className="col-12 col-md-6 col-lg-4">
+                  <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: '28px' }}>
+              <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Technologies</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {project.stack.map((item) => <span key={item} style={techChipStyle}>{item}</span>)}
+              </div>
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  if (project.slug === 'n8n-ai-agents') {
+    const sections: StorySection[] = [
+      { label: 'Reusable Workflows', heading: 'Connect tools around each task.', text: 'I built a collection of reusable AI Agents and n8n workflows. Each connects the inputs, AI processing, and actions needed for a specific task.', pills: [], image: project.gallery[0] },
+      { label: 'File Processing & Analysis', heading: 'Turn files into useful information.', text: 'AI Agents process files and analyze data with OpenAI and Gemini, reducing manual handling.', pills: [], image: project.gallery[1] },
+      { label: 'Image Generation & Data Updates', heading: 'Generate images and update data.', text: 'Workflows use Google Sheets inputs to generate images with Gemini, store files in Google Drive, and update data automatically.', pills: [], image: project.gallery[2] },
+      { label: 'Content & Notifications', heading: 'Create content and send updates.', text: 'Workflows generate content and send notifications, connecting tools through Webhooks and REST APIs.', pills: [], image: project.gallery[3] },
+    ]
+
+    return (
+      <>
+        {sections.map((section, index) => (
+          <ProjectStorySection key={section.label} section={section} index={index} preserveAspectRatio compact onImageClick={() => onImageClick(project.gallery.indexOf(section.image!) + 1)} />
+        ))}
+        <section style={{ padding: '40px 0', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw', background: 'rgb(244,243,237)' }}>
+          <div style={pageShellStyle}>
+            <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Results</span>
+            <div className="row gx-5 gy-4">
+              {project.results.map((item) => (
+                <div key={item} className="col-12 col-md-6 col-lg-4">
+                  <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: '28px' }}>
+              <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Technologies</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {project.stack.map((item) => <span key={item} style={techChipStyle}>{item}</span>)}
+              </div>
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  if (project.slug === 'ai-real-estate-crm') {
+    const sections: StorySection[] = [
+      { label: 'Listing Automation', heading: 'From raw listings to ready-to-share content.', text: `${project.problem} ${project.overview}`, pills: [], image: project.image },
+      { label: 'CRM & Follow-up', heading: 'Keep property data and sales work connected.', text: project.solution, pills: [], image: project.gallery[0] },
+    ]
+
+    return (
+      <>
+        {sections.map((section, index) => (
+          <ProjectStorySection key={section.label} section={section} index={index} preserveAspectRatio compact onImageClick={() => onImageClick(section.image === project.image ? 0 : project.gallery.indexOf(section.image!) + 1)} />
+        ))}
+        {project.video && (
+          <section style={{ padding: '24px 0 40px' }}>
+            <div style={pageShellStyle}>
+              <video controls preload="none" aria-label="AI Real Estate CRM walkthrough" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '28px', border: '1px solid rgba(255,255,255,0.10)' }}>
+                <source src={project.video} type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+            </div>
+          </section>
+        )}
+        <section style={{ padding: '40px 0', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw', background: 'rgb(244,243,237)' }}>
+          <div style={pageShellStyle}>
+            <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Results</span>
+            <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500 }}>Less administration. More focused follow-up.</h2>
+            <div className="row gx-5 gy-4" style={{ marginTop: '8px' }}>
+              {project.results.map((item) => (
+                <div key={item} className="col-12 col-md-6 col-lg-4">
+                  <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: '28px' }}>
+              <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Integration Options</span>
+              <p style={{ color: '#111', marginBottom: '16px' }}>These are integration options; not all are connected.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {project.stack.map((item) => <span key={item} style={techChipStyle}>{item}</span>)}
+              </div>
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  if (project.slug === 'ai-clinic-booking') {
+    const sections = [
+      { label: 'Request Understanding', heading: 'Turn messages into booking details.', text: project.overview, images: [{ src: project.gallery[3], label: 'Patient Requests' }, { src: project.gallery[1], label: 'Patient Details' }] },
+      { label: 'Availability & Booking', heading: 'Check the schedule before booking.', text: project.solution, images: [{ src: project.gallery[4], label: 'Availability & Conflicts' }, { src: project.gallery[2], label: 'Appointment Records' }] },
+      { label: 'Confirmation', heading: 'Keep patients informed.', text: 'Once the appointment is booked, the workflow sends a confirmation to the patient.', images: [{ src: project.gallery[5], label: 'Booking Confirmation' }] },
+    ]
+
+    return (
+      <>
+        <ProjectStorySection section={{ label: 'The Problem', heading: 'Manual booking takes time.', text: project.problem, pills: [] }} index={0} preserveAspectRatio compact />
+        <section style={{ padding: '32px 0 40px' }}>
+          <div style={{ ...pageShellStyle, maxWidth: '1120px' }}>
+            <div className="wow fadeInUp delay-0-2s" style={{ marginBottom: '24px' }}>
+              <span style={sectionLabelStyle}>My Contribution</span>
+              <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>Connecting requests to the clinic schedule.</h2>
+              <p style={{ ...sectionCopyStyle, marginTop: '16px', marginBottom: 0 }}>{project.architecture}</p>
+            </div>
+            <ProjectImageFrame src={project.gallery[0]} alt="AI Clinic Booking Automation workflow" title="Booking Workflow" preserveAspectRatio objectFit="contain" onImageClick={() => onImageClick(1)} />
+          </div>
+        </section>
+        {sections.map((section, index) => (
+          <section key={section.label} style={{ padding: 'clamp(24px, 3vw, 40px) 0' }}>
+            <div style={pageShellStyle}>
+              <div className="row align-items-center gx-5 gy-5">
+                <div className={`col-lg-5 ${index % 2 === 1 ? 'order-lg-2 order-1' : ''}`}>
+                  <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
+                    <span style={eyebrowStyle}>{section.label}</span>
+                    <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>{section.heading}</h2>
+                    <p style={{ ...sectionCopyStyle, marginTop: '16px', marginBottom: 0 }}>{section.text}</p>
+                  </div>
+                </div>
+                <div className={`col-lg-7 ${index % 2 === 1 ? 'order-lg-1 order-2' : ''}`}>
+                  <div className="wow fadeInUp delay-0-3s" style={{ display: 'grid', gap: '16px' }}>
+                    {section.images.map((image) => (
+                      <figure key={image.src} style={{ margin: 0 }}>
+                        <figcaption style={{ ...sectionCopyStyle, marginBottom: '12px' }}>{image.label}</figcaption>
+                        <ProjectImageFrame src={image.src} alt={image.label} title={image.label} preserveAspectRatio objectFit="contain" onImageClick={() => onImageClick(project.gallery.indexOf(image.src) + 1)} />
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ))}
+        <section style={{ padding: '40px 0', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw', background: 'rgb(244,243,237)' }}>
+          <div style={pageShellStyle}>
+            <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Outcomes</span>
+            <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500 }}>A smoother booking process.</h2>
+            <div className="row gx-5 gy-4" style={{ marginTop: '8px' }}>
+              {project.results.slice(0, 3).map((item) => (
+                <div key={item} className="col-12 col-md-6 col-lg-4">
+                  <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  if (project.slug === 'ai-cv-builder') {
+    return (
+      <>
+        <section style={{ padding: '32px 0 40px' }}>
+          <div style={{ ...pageShellStyle, maxWidth: '1120px' }}>
+            <div className="wow fadeInUp delay-0-2s" style={{ marginBottom: '24px' }}>
+              <span style={sectionLabelStyle}>Preview & Download</span>
+              <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>A clear path from text to PDF.</h2>
+              <p style={{ ...sectionCopyStyle, marginTop: '16px', marginBottom: 0 }}>{project.overview}</p>
+            </div>
+            <ProjectImageFrame src={project.gallery[4]} alt="AI CV Builder final PDF preview" title="Final PDF Preview" preserveAspectRatio objectFit="contain" onImageClick={() => onImageClick(5)} />
+          </div>
+        </section>
+        <ProjectStorySection section={{ label: 'The Problem', heading: 'CV formatting takes time.', text: project.problem, pills: [], image: project.gallery[2] }} index={0} preserveAspectRatio compact onImageClick={() => onImageClick(3)} />
+        <section style={{ padding: 'clamp(24px, 3vw, 40px) 0' }}>
+          <div style={pageShellStyle}>
+            <div className="row align-items-center gx-5 gy-5">
+              <div className="col-lg-7 order-lg-1 order-2">
+                <div className="wow fadeInUp delay-0-4s">
+                  <ProjectImageFrame src={project.gallery[0]} alt="AI CV Builder template selection" title="Template Selection" preserveAspectRatio objectFit="contain" onImageClick={() => onImageClick(1)} />
+                  <div style={{ marginTop: '16px' }}>
+                    <ProjectImageFrame src={project.gallery[1]} alt="AI CV Builder template preview" title="Template Preview" preserveAspectRatio objectFit="contain" onImageClick={() => onImageClick(2)} />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-5 order-lg-2 order-1">
+                <div className="wow fadeInUp delay-0-2s" style={{ maxWidth: '520px' }}>
+                  <span style={eyebrowStyle}>The Solution</span>
+                  <h2 style={{ ...sectionHeadingStyle, fontSize: caseStudyHeadingFontSize }}>A layout that follows the content.</h2>
+                  <p style={{ ...sectionCopyStyle, marginTop: '16px', marginBottom: 0 }}>{project.solution}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <ProjectStorySection section={{ label: 'My Contribution', heading: 'Building the backend and AI workflow.', text: project.architecture, pills: [], image: project.gallery[3] }} index={2} preserveAspectRatio compact onImageClick={() => onImageClick(4)} />
+        <section style={{ padding: '40px 0', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw', background: 'rgb(244,243,237)' }}>
+          <div style={pageShellStyle}>
+            <span style={{ ...eyebrowStyle, color: 'rgba(0,0,0,0.88)' }}>Outcomes</span>
+            <h2 style={{ ...sectionHeadingStyle, fontSize: lightSectionHeadingFontSize, color: '#111', fontWeight: 500 }}>Simpler CV preparation.</h2>
+            <div className="row gx-5 gy-4" style={{ marginTop: '8px' }}>
+              {project.results.slice(0, 3).map((item) => (
+                <div key={item} className="col-12 col-md-6">
+                  <p style={{ color: '#111', fontSize: 'clamp(0.98rem, 1.1vw, 1.06rem)', lineHeight: 1.6, margin: 0, fontWeight: 600 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
   const isResumeReviewer = project.slug === 'resume-reviewer-api'
   const isSeoAutomation = project.slug === 'seo-automation'
   const architectureImage = project.gallery[1] ?? project.gallery[0]
@@ -634,6 +942,9 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
   const [photoIndex, setPhotoIndex] = useState<number | null>(null)
   const [isOpen, setIsOpen] = useState(false)
   const isDelivero = project.slug === 'delivero'
+  const isClinicBooking = project.slug === 'ai-clinic-booking'
+  const hasClickableCover = isClinicBooking || ['ai-cv-builder', 'ai-real-estate-crm', 'n8n-ai-agents', 'xray-super-resolution', 'ai-ecommerce-content'].includes(project.slug)
+  const popupImages = hasClickableCover ? [project.image, ...project.gallery] : project.gallery
 
   const handleImagePopup = (i: number) => {
     setPhotoIndex(i)
@@ -804,7 +1115,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
               </div>
             </div>
           ) : (
-            <ProjectCaseStudyHero project={project} />
+            <ProjectCaseStudyHero project={project} onImageClick={hasClickableCover ? () => handleImagePopup(0) : undefined} />
           )}
         </div>
 
@@ -1108,7 +1419,7 @@ export default function SingleProjectArea({ project }: SingleProjectAreaProps) {
 
       {isOpen && (
         <ImagePopup
-          images={project.gallery}
+          images={popupImages}
           setIsOpen={setIsOpen}
           photoIndex={photoIndex}
           setPhotoIndex={setPhotoIndex}
