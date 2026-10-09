@@ -4,6 +4,7 @@ import HeroArea from './HeroArea'
 import BrandArea from './BrandArea'
 import AboutArea from './AboutArea'
 import ServiceArea from './ServiceArea'
+import PortfolioArea from './PortfolioArea'
 import HeaderOne from '@/layouts/headers/HeaderOne'
 import TestimonoalArea from './TestimonoalArea'
 import BlogArea from './BlogArea'
@@ -24,6 +25,7 @@ export default function Home() {
             <BrandArea />
             <AboutArea />
             <ServiceArea />
+            <PortfolioArea />
             <ExperienceArea />
             {showTestimonials && <TestimonoalArea />}
             {showBlog && <BlogArea />}

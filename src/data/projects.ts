@@ -279,7 +279,23 @@ export const projects: Project[] = [
   },
 ]
 
-export const publicProjects = projects.filter((project) => !project.hidden)
+export const publicProjectOrder = [
+  'delivero',
+  'ai-real-estate-crm',
+  'resume-reviewer-api',
+  'ai-clinic-booking',
+  'ai-ecommerce-content',
+  'ai-cv-builder',
+  'xray-super-resolution',
+  'seo-automation',
+  'n8n-ai-agents',
+] as const
+
+const projectRanks = new Map<string, number>(publicProjectOrder.map((slug, index) => [slug, index]))
+
+export const publicProjects = projects
+  .filter((project) => !project.hidden)
+  .sort((a, b) => (projectRanks.get(a.slug) ?? Infinity) - (projectRanks.get(b.slug) ?? Infinity))
 
 export const allCategories = ['AI & Backend', 'Robotics', 'Automation']
 

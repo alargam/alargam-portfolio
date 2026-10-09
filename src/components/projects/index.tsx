@@ -4,7 +4,7 @@ import Breadcrumb from '../common/Breadcrumb'
 import EngineeringDomains from './EngineeringDomains'
 import ProjectFilters from './ProjectFilters'
 import ProjectCard from './ProjectCard'
-import { projects, getFilteredProjects } from '@/data/projects'
+import { getFilteredProjects } from '@/data/projects'
 import HeaderOne from '@/layouts/headers/HeaderOne'
 import FooterOne from '@/layouts/footers/FooterOne'
 
